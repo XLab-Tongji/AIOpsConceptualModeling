@@ -1,0 +1,1254 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/administrator/ontologies/2020/9/lib.owl#"
+     xml:base="http://www.semanticweb.org/administrator/ontologies/2020/9/lib.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:library="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/lib.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#belongToDev -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#belongToDev">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasPlatform"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#belongToPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#belongToPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasGame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasGame">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#hasPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#isMadeBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#isMadeBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#makesGame"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#makesGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#makesGame">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#makesSoft -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#makesSoft">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#adventure"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#adventure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#adventure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#simulation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#sport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Activision -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Activision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Call_of_Duty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Blizzard"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Call_of_Duty"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Overwatch"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#World_of_Warcraft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Blizzard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Blizzard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Overwatch"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#World_of_Warcraft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#CDPR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#CDPR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#eu"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#GOG"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Witcher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Call_of_Duty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Call_of_Duty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Activision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Capcom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Capcom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Devil_May_Cry"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Monster_Hunter_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Cytus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Cytus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#music"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Devil_May_Cry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Devil_May_Cry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ps4"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Capcom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#EA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#EA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Mass_Effect"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Red_Alert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Epic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Epic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Fire_Emblem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Fire_Emblem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ns"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#3ds"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#GOG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#GOG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#CDPR"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Witcher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Grand_Theft_Auto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Grand_Theft_Auto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Rockstar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Half_Life -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Half_Life">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Valve"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Halo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Halo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Konami -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Konami">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Metal_Gear_Solid"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Mass_Effect -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Mass_Effect">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#EA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Metal_Gear_Solid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Metal_Gear_Solid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Konami"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Microsoft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#xbox360"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Halo"/>
+        <library:makesSoft rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Visual_Studio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Monster_Hunter_World -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Monster_Hunter_World">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ps4"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Capcom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Next_Studios -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Next_Studios">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ns"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#2ds"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#3ds"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Fire_Emblem"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Pokemon"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Splatoon"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Mario_Galaxy"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Legend_of_Zelda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Overwatch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Overwatch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Blizzard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Pokemon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Pokemon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Portal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Portal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Valve"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Red_Alert -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Red_Alert">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#strategy"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#EA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Rockstar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Rockstar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Grand_Theft_Auto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Sony -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Sony">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ps4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Splatoon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Splatoon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#stg"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Valve"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Devil_May_Cry"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Grand_Theft_Auto"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Half_Life"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Portal"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Witcher"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Unheard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Mario_Galaxy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Mario_Galaxy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#act"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ns"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Smash_Bros -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Smash_Bros">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ftg"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Legend_of_Zelda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Legend_of_Zelda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Witcher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#The_Witcher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#GOG"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#CDPR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Tomb_Raider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Tomb_Raider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#adventure"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Unheard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Unheard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#adventure"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Valve -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Valve">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#usa"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        <library:hasPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Steam"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Half_Life"/>
+        <library:makesGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Portal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Visual_Studio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Visual_Studio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#World_of_Warcraft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#World_of_Warcraft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mmo"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#role-play"/>
+        <library:belongToPlatform rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Battle.net"/>
+        <library:isMadeBy rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Blizzard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ns -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ns">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Fire_Emblem"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Super_Mario_Galaxy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ps4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#ps4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#playstation"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Sony"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Devil_May_Cry"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Monster_Hunter_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#xbox360 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#xbox360">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#micro_xbox"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Microsoft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#2ds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#2ds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#3ds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#3ds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#nintendo_console"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+        <library:belongToDev rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Nintendo"/>
+        <library:hasGame rdf:resource="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#Fire_Emblem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#PC"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#console"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#mobile"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#audio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#image"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#program"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#video"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#china"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#japan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#western"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#developer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#game"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#platform"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/administrator/ontologies/2020/9/library.owl#software"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -3,17 +3,20 @@ package com.example.demo.model;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
-public class RDFWriting {
+/**
+ * @author Raven
+ */
+public class RdfWriting {
     public static void main(String[] args){
 
         //Introduction
-        String personURI = "http://somewhere/JohnSmith";
+        String personUri = "http://somewhere/JohnSmith";
         String givenName = "John";
         String familyName = "Smith";
         String fullName = givenName + " " + familyName;
         Model model = ModelFactory.createDefaultModel();
 
-        Resource johnSmith = model.createResource(personURI);
+        Resource johnSmith = model.createResource(personUri);
         johnSmith.addProperty(VCARD.FN, fullName);
         johnSmith.addProperty(VCARD.N,
                 model.createResource()

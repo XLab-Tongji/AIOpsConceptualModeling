@@ -3,6 +3,9 @@ package com.example.demo.model;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
+/**
+ * @author Raven
+ */
 public class AddDelete {
     public static void main(String[] args){
         String personURI = "http://somewhere/JohnSmith";
@@ -22,8 +25,8 @@ public class AddDelete {
         model.write(System.out);
         // 删除 Statement
         model.remove(model.listStatements(null, VCARD.N, (RDFNode)null));
-        model.removeAll(null, VCARD.Given, (RDFNode)null);
-        model.removeAll(null, VCARD.Family, (RDFNode)null);
+        model.removeAll(null, VCARD.Given, null);
+        model.removeAll(null, VCARD.Family, null);
 
         System.out.println("\ncontents after deletion");
         model.write(System.out);

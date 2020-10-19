@@ -3,11 +3,14 @@ package com.example.demo.model;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 /**
  * @author Raven
  */
 public class RdfWriting {
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException {
 
         //Introduction
         String personUri = "http://somewhere/JohnSmith";
@@ -26,7 +29,9 @@ public class RdfWriting {
         //Model write
         model.write(System.out);
         System.out.println();
-        model.write(System.out, "RDF/XML-ABBREV");
+        FileOutputStream fOut;
+        fOut = new FileOutputStream("hello.rdf");
+        model.write(fOut, "RDF/XML-ABBREV");
         System.out.println();
         model.write(System.out, "N-TRIPLE");
     }

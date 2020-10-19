@@ -1,11 +1,11 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Raven
@@ -19,9 +19,9 @@ public class InitController {
         return "hello index";
     }
 
-    @RequestMapping("/person")
-    public List<Person> getPersonList(){
-        Person p1 = new Person("Edward", "Kenway");
+    @RequestMapping("/person/{given}/{family}")
+    public List<Person> getPersonList(@PathVariable String given, @PathVariable String family){
+        Person p1 = new Person("http://somewhere/" + given + family, given, family);
         List<Person> testList = new ArrayList<>();
         testList.add(p1);
         return testList;

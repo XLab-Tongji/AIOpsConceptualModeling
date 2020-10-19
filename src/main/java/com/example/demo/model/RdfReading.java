@@ -13,7 +13,7 @@ public class RdfReading {
     public static void main(String[] args){
         {
             OntModel ontModel=ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-            ontModel.read("file:C:\\Users\\Administrator\\Documents\\GitHub\\AIOpsConceptualModeling\\src\\main\\java\\com\\example\\demo\\model\\resources.rdf");
+            ontModel.read("resources.rdf");
             ontModel.write(System.out);
             StmtIterator iter = ontModel.listStatements(new SimpleSelector(null, VCARD.FN, (RDFNode)null));
             if(iter.hasNext()){

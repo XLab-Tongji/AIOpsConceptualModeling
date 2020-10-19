@@ -30,7 +30,7 @@ public class RdfWriting {
         model.write(System.out);
         System.out.println();
         FileOutputStream fOut;
-        fOut = new FileOutputStream("hello.rdf");
+        fOut = new FileOutputStream("test.rdf");
         model.write(fOut, "RDF/XML-ABBREV");
         System.out.println();
         model.write(System.out, "N-TRIPLE");

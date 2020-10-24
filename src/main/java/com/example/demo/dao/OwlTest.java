@@ -6,24 +6,32 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Iterator;
+
 /**
  * @author Raven
  */
 public class OwlTest {
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
         String NS = SOURCE + "#";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-        OntClass paper = baseOnt.createClass(NS + "paper");
+        baseOnt.read("output.owl");
 
-        OntClass pen = baseOnt.createClass(NS + "pen");
-        paper.addSubClass(pen);
+        OntClass paper = baseOnt.createClass(NS + "thing");
 
-        OntClass damn = baseOnt.createClass(NS + "damn");
-
-        ObjectProperty hasFucked = baseOnt.createObjectProperty(NS + "hasFucked");
-        hasFucked.addDomain(paper);
-        hasFucked.addRange(pen);
+        for(Iterator iter = baseOnt.listClasses(); iter.hasNext();)
+        {
+            //String c = iter.next().toString();
+            //c.replace(NS, "1");
+            System.out.println(" "+iter.next().toString());
+        }
         baseOnt.write(System.out);
+        FileOutputStream fOut;
+        fOut = new FileOutputStream("output.owl");
+        baseOnt.write(fOut);
+
     }
 }

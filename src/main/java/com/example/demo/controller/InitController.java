@@ -6,6 +6,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.VCARD;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Person;
+import com.example.demo.service.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -48,6 +49,11 @@ public class InitController {
         testList.add(p1);
         return testList;
     }
-
+    @PostMapping("/addClass")
+    public String addClass(@RequestParam("name") String name,
+                           @RequestParam("sub") String sub){
+        addClass(name,sub);
+        return name + sub;
+    }
 
 }

@@ -21,6 +21,7 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     compile 'org.apache.jena:apache-jena-libs:3.16.0'
+    compile 'org.yaml:snakeyaml:1.25'
 }
 
 test {

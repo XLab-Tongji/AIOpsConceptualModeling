@@ -3,7 +3,18 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#testing"/>
   <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test2"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test3"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test4"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test5"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test6"/>
   <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test"/>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#thing"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test7"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test8"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#test9"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#null"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#1"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#2"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#3"/>
 </rdf:RDF>

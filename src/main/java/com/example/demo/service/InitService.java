@@ -36,23 +36,29 @@ public class InitService {
         return message;
     }
 
-    public String createProp(String name, String domain, String range){
+    public String createProp(String name, String domain, String range) throws FileNotFoundException {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
         String NS = SOURCE + "#";
         String message = "property created";
+        System.out.println(name + domain + range);
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read("output.owl");
         ObjectProperty prop = baseOnt.createObjectProperty(NS + name);
-        OntClass domainClass = baseOnt.getOntClass(domain);
-        OntClass rangeClass = baseOnt.getOntClass(range);
-        if(domain != null & domainClass != null)
+        OntClass domainClass = baseOnt.getOntClass(NS + domain);
+        OntClass rangeClass = baseOnt.getOntClass(NS + range);
+        if(domain != null && domainClass != null)
         {
             prop.addDomain(domainClass);
+            System.out.println("domain added");
         }
-        if(range != null & rangeClass != null)
+        if(range != null && rangeClass != null)
         {
             prop.addRange(rangeClass);
+            System.out.println("range added");
         }
+        FileOutputStream fOut;
+        fOut = new FileOutputStream("output.owl");
+        baseOnt.write(fOut);
         return message;
     }
 

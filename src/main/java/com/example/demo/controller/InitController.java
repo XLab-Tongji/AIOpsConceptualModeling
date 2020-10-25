@@ -20,7 +20,7 @@ public class InitController {
 
     @PostMapping("/addClass")
     public String addClass(@RequestParam("name") String name,
-                           @RequestParam("subOf") String subOf) throws FileNotFoundException {
+                           @RequestParam(value = "subOf",required = false) String subOf) throws FileNotFoundException {
 
         String message = init.createClass(name,subOf);
         return message;
@@ -35,7 +35,7 @@ public class InitController {
     @PostMapping("/addProperty")
     public String addProp(@RequestParam("name") String name,
                           @RequestParam(value = "domain", required = false) String domain,
-                          @RequestParam(value = "range", required = false) String range){
+                          @RequestParam(value = "range", required = false) String range) throws FileNotFoundException {
         String message = init.createProp(name, domain, range);
         return message;
     }

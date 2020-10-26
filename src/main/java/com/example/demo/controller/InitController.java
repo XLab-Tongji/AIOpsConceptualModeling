@@ -32,11 +32,19 @@ public class InitController {
         return message;
     }
 
-    @PostMapping("/createProperty")
-    public String createProp(@RequestParam("name") String name,
+    @PostMapping("/addProperty")
+    public String addProp(@RequestParam("name") String name,
+                          @RequestParam("parentName") String parentName,
+                          @RequestParam(value = "value",required = false) String value) throws FileNotFoundException {
+        String message = init.addProp(name, parentName, value);
+        return message;
+    }
+
+    @PostMapping("/optimizeProperty")
+    public String optProp(@RequestParam("name") String name,
                           @RequestParam(value = "domain", required = false) String domain,
                           @RequestParam(value = "range", required = false) String range) throws FileNotFoundException {
-        String message = init.createProp(name, domain, range);
+        String message = init.optProp(name, domain, range);
         return message;
     }
 

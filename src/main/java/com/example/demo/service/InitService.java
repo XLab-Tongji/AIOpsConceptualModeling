@@ -6,8 +6,6 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -38,13 +36,10 @@ public class InitService {
         return message;
     }
 
-
-
-    //增加一个属性
-    public String createProp(String name, String domain, String range) throws FileNotFoundException {
+    public String optProp(String name, String domain, String range) throws FileNotFoundException {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
         String NS = SOURCE + "#";
-        String message = "property created";
+        String message = "property optimized";
         System.out.println(name + domain + range);
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read("output.owl");
@@ -66,7 +61,35 @@ public class InitService {
         baseOnt.write(fOut);
         return message;
     }
+    public String addProp(String name, String parentName, String value) throws FileNotFoundException {
+        String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
+        String NS = SOURCE + "#";
+        OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
+        baseOnt.read("output.owl");
 
+        String message;
+        System.out.println(name + parentName + value);
+        ObjectProperty prop = baseOnt.createObjectProperty(NS + name);
+        OntClass parentClass = baseOnt.getOntClass(NS + parentName);
+        ObjectProperty parentProp = baseOnt.getObjectProperty(NS + parentName);
+        if(parentClass != null)
+        {
+            parentClass.addProperty(prop,value);
+            message = "property created";
+        }
+        else if(parentProp != null)
+        {
+            parentProp.addProperty(prop,value);
+            message = "sub property created";
+        }
+        else{
+            message = "parent does not exist";
+        }
+        FileOutputStream fOut;
+        fOut = new FileOutputStream("output.owl");
+        baseOnt.write(fOut);
+        return message;
+    }
 
     public String removeRes(String name) {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";

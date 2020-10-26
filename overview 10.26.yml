@@ -1,0 +1,131 @@
+Open Telemetry:
+
+  Distributed Tracing:
+
+​    Trace:
+
+​      \- myProp:一个完整的调用链路追踪，一个Trace表示了一个事物在分布式系统中的执行过程，一个Trace是由多个Span组成的一个Tree（DAG的一种），同时Trace也是整个Tree的Root
+
+​      \- initProp:
+
+​        \- TraceID:byte[16]
+
+​        \- is composed of Span
+
+​    Span:
+
+​      \- myProp:Span是一个基本工作单元，每一次远程过程调用或者数据库调用都会生成一个Span
+
+​      \- initProp:
+
+​        \- lock:sync.RWMutex
+
+​        \- tracer:*Tracer
+
+​        \- spanContext:trace.SpanContext
+
+​        \- parentSpanID:trace.SpanID
+
+​        \- ended:bool
+
+​        \- name:string
+
+​        \- startTime:time.Time
+
+​        \- endTime:time.Time
+
+​        \- ststusCode:codes.Code
+
+​        \- statusMessage:string
+
+​        \- attributes:map[label.Key]label.Value
+
+​        \- events:[]Event
+
+​        \- links:map[trace.SpanContext] []label.Keyvalue
+
+​        \- spanKind:trace.SpanKind
+
+​        \- composes Trace
+
+​    Links between spans
+
+​      \- myProp:一个Span可以链接到零个或多个因果相关的其他Span
+
+​      \- initProp:
+
+​        \- innertype:Batch
+
+  Metrics:
+
+​    \- myProp:一种聚合数值，存储空间很小，可以观察系统的状态和趋势，但对于问题定位缺乏细节展示。
+
+​    \- initProp:
+
+​      \- Metric Instruments:
+
+​        \- myProp:OpenTelemetry定义了三种instruments来达到不同的目的
+
+​        \- counter:
+
+​           myProp:a measure is a value that is aggregated over time
+
+​        \- measure:
+
+​           myProp:a counter is a value that is summed over time
+
+​        \- observer:
+
+​           myProp:an observer captures a current set of values at a particular point in time
+
+  Baggage:
+
+​    \- myProp:baggage是SpanContext的一部分，和tags、logs的差别在于，baggage是全局传递的。
+
+​    \- initProp:
+
+​        \- baggage key:string
+
+​        \- baggage value:string
+
+​        \- baggage key:string
+
+  Resources:
+
+​    \- myProp:telemetry information entity set
+
+  Context Propagation
+
+​    \- myProp:act of serializing and deserializing a context object and passing it to a new service
+
+  Propagators:
+
+​    \- myProp:使用传播器来序列化和反序列化cross-cutting concern值
+
+​    \- initProp:
+
+​      \- HTTPExtractors():[]HTTPExtractor
+
+​      \- HTTPInjectors():[]HTTPInjector
+
+  Collector:
+
+​    \- myProp:is an executable that allows to receive telemetry data, optionally transform it and send the data further
+
+​    \- initProp:
+
+​      service:
+
+​        pipelines:
+
+​          tracers:
+
+​            receivers:[opencensus, jaeger, zipkin]
+
+​            processors:[tags, tail_sampling, batch, queued_retry]
+
+​            exporters:[opencensus, jaeger, stackdriver, zipkin]
+
+  Instrumentation Libraries:
+
+​    \- myProp:libraries offering opentelemetry api for each language and applications

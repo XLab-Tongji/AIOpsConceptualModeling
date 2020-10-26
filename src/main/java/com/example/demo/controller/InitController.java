@@ -32,8 +32,8 @@ public class InitController {
         return message;
     }
 
-    @PostMapping("/addProperty")
-    public String addProp(@RequestParam("name") String name,
+    @PostMapping("/createProperty")
+    public String createProp(@RequestParam("name") String name,
                           @RequestParam(value = "domain", required = false) String domain,
                           @RequestParam(value = "range", required = false) String range) throws FileNotFoundException {
         String message = init.createProp(name, domain, range);

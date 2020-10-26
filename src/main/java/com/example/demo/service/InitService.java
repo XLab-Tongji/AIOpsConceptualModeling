@@ -6,6 +6,8 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -36,6 +38,9 @@ public class InitService {
         return message;
     }
 
+
+
+    //增加一个属性
     public String createProp(String name, String domain, String range) throws FileNotFoundException {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
         String NS = SOURCE + "#";
@@ -61,6 +66,7 @@ public class InitService {
         baseOnt.write(fOut);
         return message;
     }
+
 
     public String removeRes(String name) {
         String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";

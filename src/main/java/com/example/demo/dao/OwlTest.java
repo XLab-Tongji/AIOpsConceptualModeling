@@ -21,6 +21,10 @@ public class OwlTest {
         baseOnt.read("output.owl");
 
         OntClass paper = baseOnt.createClass(NS + "thing");
+        ObjectProperty p1 = baseOnt.createObjectProperty(NS + "p1");
+        ObjectProperty p2 = baseOnt.createObjectProperty(NS + "p2");
+        paper.addProperty(p1,"value");
+        p1.addProperty(p2,"value2");
 
         for(Iterator iter = baseOnt.listClasses(); iter.hasNext();)
         {

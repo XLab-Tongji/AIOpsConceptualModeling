@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class,parentClass,prop,parentName,value
 OpenTelemetry,null,null,null,null
 DistributedTracing,OpenTelemetry,null,null,null
@@ -16,3 +17,23 @@ ContextPropagation,OpenTelemetry,null,null,null
 Propagators,OpenTelemetry,null,null,null
 Collector,OpenTelemetry,null,null,null
 InstrumentationLibraries,OpenTelemetry,null,null,null
+=======
+class,parentClass,prop,parentName,value
+OpenTelemetry,null,null,null,null
+DistributedTracing,OpenTelemetry,null,null,null
+Trace,DistributedTracing,null,null,null
+Trace,DistributedTracing,traceProp,Trace,是由它的Span隐式定义的，可以被认为是Span的一个有向无环图
+Span,DistributedTracing,null,null,null
+Span,DistributedTracing,spanProp,span,Span是一个基本工作单元，每一次远程过程调用或者数据库调用都会生成一个
+Span,DistributedTracing,initProp,span,value
+Span,DistributedTracing,tracer,initProp,*Tracer
+Span,DistributedTracing,spanContext,initProp,trace.SpanContext
+LinksBetweenSpans,DistributedTracing,null,null,null
+Metrics,OpenTelemetry,null,null,null
+Baggage,OpenTelemetry,null,null,null
+Resources,OpenTelemetry,null,null,null
+ContextPropagation,OpenTelemetry,null,null,null
+Propagators,OpenTelemetry,null,null,null
+Collector,OpenTelemetry,null,null,null
+InstrumentationLibraries,OpenTelemetry,null,null,null
+>>>>>>> b1bc2082a7e0025da3df2daca90a13b7f035441f

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.dao.OntDao;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.service.*;
 
 import java.io.FileNotFoundException;
 
@@ -10,8 +10,8 @@ import java.io.FileNotFoundException;
  */
 @RestController
 @RequestMapping("/init")
-public class InitController {
-    InitService init = new InitService();
+public class OntController {
+    OntDao ontDao = new OntDao();
 
     @RequestMapping("/index")
     public String sayHello(){
@@ -22,30 +22,26 @@ public class InitController {
     public String addClass(@RequestParam("name") String name,
                            @RequestParam(value = "subOf",required = false) String subOf) throws FileNotFoundException {
 
-        String message = init.createClass(name,subOf);
-        return message;
+        return ontDao.createClass(name,subOf);
     }
 
     @PostMapping("/deleteRes")
     public String deleteRes(@RequestParam("name") String name){
-        String message = init.removeRes(name);
-        return message;
+        return ontDao.removeRes(name);
     }
 
     @PostMapping("/addProperty")
     public String addProp(@RequestParam("name") String name,
                           @RequestParam("parentName") String parentName,
                           @RequestParam(value = "value",required = false) String value) throws FileNotFoundException {
-        String message = init.addProp(name, parentName, value);
-        return message;
+        return ontDao.addProp(name, parentName, value);
     }
 
     @PostMapping("/optimizeProperty")
     public String optProp(@RequestParam("name") String name,
                           @RequestParam(value = "domain", required = false) String domain,
                           @RequestParam(value = "range", required = false) String range) throws FileNotFoundException {
-        String message = init.optProp(name, domain, range);
-        return message;
+        return ontDao.optProp(name, domain, range);
     }
 
 }

@@ -24,5 +24,9 @@ Author lidetao
 
 7.输出/备用/测试文件已全部转入./data目录下，引用时请注意路径问题，暂未构建子目录  
 
+Develop log 11.4.2020  
+Author lidetao  
+
+1.实体已变更为class+relation，在model层定义了一个二元组来保存relation的domain和range
 
 

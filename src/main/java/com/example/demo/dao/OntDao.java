@@ -1,11 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.dao;
 
 import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,94 +13,94 @@ import java.io.FileOutputStream;
 /**
  * @author Raven
  */
-@Service
-public class InitService {
-    public String createClass(String name, String subOf) throws FileNotFoundException {
-        String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
-        String NS = SOURCE + "#";
-        String message = "class created";
+@Component
+public class OntDao {
+    private final String NS;
+    String result = "./data/output.owl";
+
+    public OntDao() {
+        String source = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
+        this.NS = source + "#";
+    }
+
+
+    public String createClass(String newClass) throws FileNotFoundException {
+        String message = "Class created";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-        baseOnt.read("output.owl");
-        OntClass sample = baseOnt.createClass(NS + name);
-        OntClass sub = baseOnt.getOntClass(NS + subOf);
+        baseOnt.read(result);
+        OntClass sample = baseOnt.createClass(NS + newClass);
         if(sub == null) {
-            System.out.println("the parent class does not exist");
-            message = "the parent class does not exist";
+            System.out.println("The parent class does not exist");
+            message = "The parent class does not exist";
         }
         else{
             sub.addSubClass(sample);
         }
         FileOutputStream fOut;
-        fOut = new FileOutputStream("output.owl");
+        fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
         return message;
     }
 
     public String optProp(String name, String domain, String range) throws FileNotFoundException {
-        String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
-        String NS = SOURCE + "#";
-        String message = "property optimized";
+        String message = "Property optimized";
         System.out.println(name + domain + range);
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-        baseOnt.read("output.owl");
+        baseOnt.read(result);
         ObjectProperty prop = baseOnt.createObjectProperty(NS + name);
         OntClass domainClass = baseOnt.getOntClass(NS + domain);
         OntClass rangeClass = baseOnt.getOntClass(NS + range);
         if(domain != null && domainClass != null)
         {
             prop.addDomain(domainClass);
-            System.out.println("domain added");
+            System.out.println("Domain added");
         }
         if(range != null && rangeClass != null)
         {
             prop.addRange(rangeClass);
-            System.out.println("range added");
+            System.out.println("Range added");
         }
         FileOutputStream fOut;
-        fOut = new FileOutputStream("output.owl");
+        fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
         return message;
     }
-    public String addProp(String name, String parentName, String value) throws FileNotFoundException {
-        String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
-        String NS = SOURCE + "#";
+    public String addProp(String child, String parent, String value) throws FileNotFoundException {
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-        baseOnt.read("output.owl");
+        baseOnt.read(result);
 
         String message;
-        System.out.println(name + parentName + value);
-        ObjectProperty prop = baseOnt.createObjectProperty(NS + name);
-        OntClass parentClass = baseOnt.getOntClass(NS + parentName);
-        ObjectProperty parentProp = baseOnt.getObjectProperty(NS + parentName);
+        System.out.println(child + parent + value);
+        ObjectProperty prop = baseOnt.createObjectProperty(NS + child);
+        OntClass parentClass = baseOnt.getOntClass(NS + parent);
+        ObjectProperty parentProp = baseOnt.getObjectProperty(NS + parent);
         if(parentClass != null)
         {
             parentClass.addProperty(prop,value);
-            message = "property created";
+            message = "Property created";
         }
         else if(parentProp != null)
         {
             parentProp.addProperty(prop,value);
-            message = "sub property created";
+            message = "Sub property created";
         }
         else{
-            message = "parent does not exist";
+            message = "Parent does not exist";
         }
         FileOutputStream fOut;
-        fOut = new FileOutputStream("output.owl");
+        fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
         return message;
     }
 
     public String removeRes(String name) {
-        String SOURCE = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
-        String NS = SOURCE + "#";
-        String message = "resource removed";
+        String message = "Resource removed";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-        baseOnt.read("output.owl");
+        baseOnt.read(result);
         OntClass sample = baseOnt.getOntClass(NS + name);
         if(sample == null) {
-            System.out.println("class does not exist");
-            message = "class does not exist";
+            System.out.println("Class does not exist");
+            message = "Class does not exist";
         }
         else{
             sample.remove();

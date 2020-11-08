@@ -18,7 +18,7 @@ Span:
 
   lock: sync.RWMutex
 
-  tracer: *Tracer
+  tracer: pointTracer
 
   spanContext: trace.SpanContext
 
@@ -38,9 +38,9 @@ Span:
 
   attributes: map[label.Key]label.Value
 
-  events: []Event
+  events: Event
 
-  links: map[trace.SpanContext] []label.Keyvalue
+  links: map[trace.SpanContext label.Keyvalue
 
   spanKind: trace.SpanKind
 
@@ -52,7 +52,7 @@ SpanContext:
 
   TraceFlags: trace的选项，用一个字节来进行表示
 
-  Sampling bit: 表示trace是否被采样的位
+  Samplingbit: 表示trace是否被采样的位
 
   Tracestate: 在键值对列表中携带跟踪系统特定的上下文。Tracestate允许不同的供应商传播附加信息，并与他们的之前设定的id格式进行交互操作
 

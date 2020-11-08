@@ -18,7 +18,7 @@ import java.util.*;
 @RequestMapping("/yaml")
 public class YamlController {
     OntService ontService = new OntService();
-    YamlDao myyaml = new YamlDao("customer.yaml");
+    YamlDao myyaml = new YamlDao("overview 11.8.yml");
 
     AbstractModel primeModel = new AbstractModel();
     @RequestMapping("/init")

@@ -56,8 +56,6 @@ public class OntDao {
         baseOnt.write(fOut);
         return message;
     }
-
-
     public String addProp(String child, String parent, String value) throws FileNotFoundException {
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);

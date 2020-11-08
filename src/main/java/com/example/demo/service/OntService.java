@@ -33,6 +33,7 @@ public class OntService {
             String class2=triple.third;
             String relation=triple.second;
             ontDao.optProp(relation,class1,class2);
+
         }
     }
 }

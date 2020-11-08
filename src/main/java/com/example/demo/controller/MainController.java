@@ -16,7 +16,7 @@ public class MainController {
     OntService ontService = new OntService();
     @RequestMapping("/owl")
     public String owlInitialize() throws FileNotFoundException {
-        OntModel baseOnt = new OntModel();
+        AbstractModel baseOnt = new AbstractModel();
         ontService.ontInit(baseOnt);
         return "Owl initialized";
     }

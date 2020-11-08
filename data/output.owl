@@ -4,57 +4,19 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Propagators">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-    </rdfs:subClassOf>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#mmm">
+    <j.0:consistOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#zzz"/>
+    </j.0:consistOf>
+    <j.0:m1>22</j.0:m1>
+    <j.0:m2>wo</j.0:m2>
   </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Collector">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#zzz">
+    <j.0:z1>sss</j.0:z1>
   </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Resources">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Trace">
-    <j.0:traceProp>是由它的Span隐式定义的，可以被认为是Span的一个有向无环图</j.0:traceProp>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LinksBetweenSpans">
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing"/>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Baggage">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Metrics">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#ContextPropagation">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#InstrumentationLibraries">
-    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
-  </owl:Class>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#null">
-    <j.0:null>null</j.0:null>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#spanContext"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#spanProp"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#m1"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#m2"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#consistOf"/>
   <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#traceProp"/>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#initProp">
-    <j.0:spanContext>trace.SpanContext</j.0:spanContext>
-    <j.0:tracer>*Tracer</j.0:tracer>
-  </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#tracer"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#z1"/>
 </rdf:RDF>

@@ -19,10 +19,9 @@ public class OntController {
     }
 
     @PostMapping("/addClass")
-    public String addClass(@RequestParam("name") String name,
-                           @RequestParam(value = "subOf",required = false) String subOf) throws FileNotFoundException {
+    public String addClass(@RequestParam("name") String name) throws FileNotFoundException {
 
-        return ontDao.createClass(name,subOf);
+        return ontDao.createClass(name);
     }
 
     @PostMapping("/deleteRes")

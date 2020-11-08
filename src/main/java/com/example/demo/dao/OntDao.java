@@ -29,13 +29,6 @@ public class OntDao {
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
         OntClass sample = baseOnt.createClass(NS + newClass);
-        if(sub == null) {
-            System.out.println("The parent class does not exist");
-            message = "The parent class does not exist";
-        }
-        else{
-            sub.addSubClass(sample);
-        }
         FileOutputStream fOut;
         fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
@@ -50,21 +43,21 @@ public class OntDao {
         ObjectProperty prop = baseOnt.createObjectProperty(NS + name);
         OntClass domainClass = baseOnt.getOntClass(NS + domain);
         OntClass rangeClass = baseOnt.getOntClass(NS + range);
-        if(domain != null && domainClass != null)
+        if(domain != null && domainClass != null && range != null && rangeClass != null)
         {
-            prop.addDomain(domainClass);
+            domainClass.addProperty(prop,rangeClass);
             System.out.println("Domain added");
         }
-        if(range != null && rangeClass != null)
-        {
-            prop.addRange(rangeClass);
-            System.out.println("Range added");
+        else{
+            message="Domain not exist!";
         }
         FileOutputStream fOut;
         fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
         return message;
     }
+
+
     public String addProp(String child, String parent, String value) throws FileNotFoundException {
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);

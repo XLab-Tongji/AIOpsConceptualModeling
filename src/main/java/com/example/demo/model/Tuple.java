@@ -7,6 +7,6 @@ import lombok.Data;
  */
 @Data
 public class Tuple<A, B> {
-    public final A first;
-    public final B second;
+    public A first;
+    public B second;
 }

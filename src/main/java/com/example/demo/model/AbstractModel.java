@@ -15,5 +15,12 @@ public class AbstractModel {
      * Map relations describes relation name and a set of its domains and ranges.
      */
     private Map<String, Set<Tuple<String, String>>> classes;
-    private Map<String, Set<Tuple<String, String>>> relations;
+    private Map<String, Triple<String, String, String>> relations;
+    public Map<String, Set<Tuple<String, String>>> getClasses(){
+        return classes;
+    }
+    public Map<String, Triple<String, String, String>> getRelations(){
+        return relations;
+    }
+
 }

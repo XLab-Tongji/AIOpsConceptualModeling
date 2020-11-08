@@ -5,29 +5,35 @@ import com.example.demo.model.*;
 
 import java.io.FileNotFoundException;
 import java.util.Map;
+import java.util.Set;
 
 /**
- * @author Raven
+ * @author WuYue
  */
 public class OntService {
     OntDao ontDao = new OntDao();
-    public void ontInit(OntModel baseOnt) throws FileNotFoundException {
-        String mark = baseOnt.getId();
-        Map<String, String> ontClassRelation = baseOnt.getOntClassRelation();
-        Map<String, String> ontProp = baseOnt.getOntProp();
-        Map<String, String> ontPropRelation = baseOnt.getOntPropRelation();
+    public void ontInit(AbstractModel baseOnt) throws FileNotFoundException {
+        Map<String, Set<Tuple<String, String>>> ontClasses=baseOnt.getClasses();
+        Map<String, Triple<String, String, String>> ontRelations=baseOnt.getRelations();
 
-        for(Map.Entry<String, String> entry : ontClassRelation.entrySet()){
-            String childClass = entry.getKey();
-            String parentClass = entry.getValue();
-            ontDao.createClass(childClass, parentClass);
+        for(Map.Entry<String, Set<Tuple<String, String>>> entry : ontClasses.entrySet()){
+            String newClass = entry.getKey();
+            Set<Tuple<String, String>> props = entry.getValue();
+            ontDao.createClass(newClass);
+            for(Tuple<String,String>prop:props){
+                String propName=prop.first;
+                String propDesc=prop.second;
+                ontDao.addProp(propName,newClass,propDesc);
+            }
         }
 
-        for(Map.Entry<String, String> entry : ontProp.entrySet()){
-            String child = entry.getKey();
-            String value = entry.getValue();
-            String parent = ontPropRelation.get(child);
-            ontDao.addProp(child, parent, value);
+        for(Map.Entry<String, Triple<String, String, String>> entry : ontRelations.entrySet()){
+            Triple<String,String,String> triple= entry.getValue();
+            String class1=triple.first;
+            String class2=triple.third;
+            String relation=triple.second;
+            ontDao.optProp(relation,class1,class2);
+
         }
     }
 }

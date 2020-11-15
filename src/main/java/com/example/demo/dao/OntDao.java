@@ -45,11 +45,18 @@ public class OntDao {
         OntClass rangeClass = baseOnt.getOntClass(NS + range);
         if(domain != null && domainClass != null && range != null && rangeClass != null)
         {
-            domainClass.addProperty(prop,rangeClass);
+            prop.addDomain(domainClass);
             System.out.println("Domain added");
+            prop.addRange(rangeClass);
+            System.out.println("Range added");
         }
-        else{
-            message="Domain not exist!";
+        else {
+            if(domain == null || domainClass == null){
+                message="Domain not exist!";
+            }
+            if(range == null || rangeClass == null){
+                message="Range not exist!";
+            }
         }
         FileOutputStream fOut;
         fOut = new FileOutputStream(result);

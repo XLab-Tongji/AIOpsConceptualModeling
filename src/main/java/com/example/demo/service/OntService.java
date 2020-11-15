@@ -22,9 +22,11 @@ public class OntService {
             ontDao.createClass(newClass);
             for(Triple<Object, String, Object> prop:props){
                 Object propName=prop.first;
+                String pN = propName.toString();
                 Object propDesc=prop.third;
+                String pD = propDesc.toString();
                 String type=prop.second;
-                //ontDao.addProp(propName,newClass,propDesc);
+                ontDao.addDataProp(newClass, pN, type, pD);
             }
         }
 

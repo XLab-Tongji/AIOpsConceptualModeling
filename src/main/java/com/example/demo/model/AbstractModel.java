@@ -15,6 +15,6 @@ public class AbstractModel {
      * Map relations describes relation identification and a set of its descriptions like Domain : domain,
      * Relation : relation name,Range : range.
      */
-    private Map<String, Set<Triple<Object, Object, Object>>> classes;
+    private Map<String, Set<Triple<Object, String, Object>>> classes;
     private Map<String, Set<Tuple<Object, Object>>> relations;
 }

@@ -42,11 +42,11 @@ public class YamlDao {
                 {
                     Object prop =  entry2.getKey();
                     Object value = entry2.getValue();
-                    if(prop.toString().equals("type")&&value.toString().equals("class")){
+                    if(prop.toString().equals("Type")&&value.toString().equals("class")){
                         type=1;
                         //是类
                     }
-                    if(prop.toString().equals("type")&&value.toString().equals("relation")){
+                    if(prop.toString().equals("Type")&&value.toString().equals("relation")){
                         type=2;
                         //是关系
                     }
@@ -60,8 +60,8 @@ public class YamlDao {
                         Object prop =  entry2.getKey();
                         Object value = entry2.getValue();
                         Tuple<Object,Object> newTuple = new Tuple<>();
-                        newTuple.setFirst(prop);
-                        newTuple.setSecond(value);
+                        newTuple.setFirst(prop.toString());
+                        newTuple.setSecond(value.toString());
                         allProps.add(newTuple);
 
                     }
@@ -99,11 +99,11 @@ public class YamlDao {
                 {
                     Object prop =  entry2.getKey();
                     Object value = entry2.getValue();
-                    if(prop.toString().equals("type")&&value.toString().equals("class")){
+                    if(prop.toString().equals("Type")&&value.toString().equals("class")){
                         type=1;
                         //是类
                     }
-                    if(prop.toString().equals("type")&&value.toString().equals("relation")){
+                    if(prop.toString().equals("Type")&&value.toString().equals("relation")){
                         type=2;
                         //是关系
                     }
@@ -114,16 +114,16 @@ public class YamlDao {
                         Object prop =  entry2.getKey();
                         Object value = entry2.getValue();
                         Triple<Object,String,Object> newTriple = new Triple<>();
-                        newTriple.setFirst(prop);
+                        newTriple.setFirst(prop.toString());
                         String myprop = prop.toString();
                         if(myprop.charAt(0)=='m'&&myprop.charAt(1)=='y'){
-                            newTriple.setSecond("Data");
+                            newTriple.setSecond("label");
                         }
                         else {
-                            newTriple.setSecond("Meta");
+                            newTriple.setSecond("ID");
                         }
 
-                        newTriple.setThird(value);
+                        newTriple.setThird(value.toString());
                         allProps.add(newTriple);
 
                     }

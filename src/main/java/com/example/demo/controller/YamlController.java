@@ -20,7 +20,7 @@ public class YamlController {
 
     YamlService yamlService = new YamlService();
     @RequestMapping("/init")
-    public AbstractModel YamlToProps() throws FileNotFoundException {
+    public AbstractModel yamlToProps() throws FileNotFoundException {
         return yamlService.YamlToProps();
     }
 }

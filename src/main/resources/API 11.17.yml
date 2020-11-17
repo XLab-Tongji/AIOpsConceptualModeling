@@ -14,7 +14,7 @@ GetAllFunction:
 
   Type: class
 
-  myGetAllFunction: Returns the name/value pairs in the Baggage. The order of name/value pairs MUST NOT be significant. Based on the language specification, the returned value can be either an immutable collection or an immutable iterator to the collection of name/value pairs in the Baggage. OPTIONAL parameters: Context the context containing the Baggage from which to get the baggages.
+  myGetAllFunction: Returns the name/value pairs in the Baggage. The order of name/value pairs MUST NOT be significant. Based on the language specification, the returned value can be either an immutable collection or an immutable iterator to the collection of name/value pairs in the Baggage. OPTIONAL parameters:Context the context containing the Baggage from which to get the baggages.
 
 GetBaggageFunction: 
 
@@ -66,13 +66,13 @@ TraceProvider:
 
   myTraceProvider: TraceProvider is the entry point of the API. It provides access to Tracers.
 
-Tracer: 
+Tracer2:
 
   Type: class
 
   myTracer:  Tracer is the class responsible for creating Spans.
 
-Span: 
+Span2:
 
   Type: class
 
@@ -90,9 +90,9 @@ ContextInteraction:
 
   Type: class
 
-  myContextInteraction: The API MUST provide the following functionality to interact with a Context instance: Extract the Span from a Context instance; Insert the Span to a Context instance.
+  myContextInteraction: The API MUST provide the following functionality to interact with a Context instance:Extract the Span from a Context instance; Insert the Span to a Context instance.
 
-  myContextInteractionImplicitly: the API SHOULD also provide the following functionality: Get the currently active span from the implicit context; Set the currently active span to the implicit context.
+  myContextInteractionImplicitly: the API SHOULD also provide the following functionality:Get the currently active span from the implicit context; Set the currently active span to the implicit context.
 
 Tracer: 
 
@@ -178,7 +178,7 @@ SetStatus:
 
   mySetStatus: Sets the Status of the Span. If used, this will override the default Span status, which is Unset.
 
-  StatusCode: One of the values listed below: Unset, Ok, Error.
+  StatusCode: One of the values listed below:Unset, Ok, Error.
 
 UpdateName: 
 
@@ -242,7 +242,7 @@ MetricInstruments:
 
   Synchronicity: A synchronous instrument is called by the user in a distributed Context (i.e., with associated Span, Baggage, etc.). An asynchronous instrument is called by the SDK once per collection interval, lacking a Context.
 
-  Addingvs.Grouping: An adding instrument is one that records adding measurements, as opposed to a grouping instrument as described above.
+  AddingvsGrouping: An adding instrument is one that records adding measurements, as opposed to a grouping instrument as described above.
 
   Monotonicity: A monotonic instrument is an adding instrument, where the progression of sums is non-decreasing. Monotonic instruments are useful for monitoring rate information.
 

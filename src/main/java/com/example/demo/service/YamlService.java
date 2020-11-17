@@ -1,15 +1,16 @@
 package com.example.demo.service;
 import com.example.demo.dao.YamlDao;
-import org.yaml.snakeyaml.*;
 
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.*;
 
 import com.example.demo.model.*;
+/**
+ * @author xjt
+ */
 public class YamlService {
     OntService ontService = new OntService();
-    YamlDao myyaml = new YamlDao("overview 11.8.yml");
+    YamlDao myyaml = new YamlDao("API 11.17.yml");
 
     AbstractModel primeModel = new AbstractModel();
     public AbstractModel YamlToProps() throws FileNotFoundException {

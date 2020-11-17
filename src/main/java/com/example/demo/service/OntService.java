@@ -48,6 +48,7 @@ public class OntService {
                     case "range":
                         range=value.toString();
                         break;
+                    default:break;
                 }
             }
             ontDao.optProp(relation,domain,range);

@@ -39,13 +39,13 @@ public class OntService {
                 String type=tuple.getFirst().toString();
                 Object value=tuple.getSecond();
                 switch (type){
-                    case "relation":
+                    case "Name":
                         relation=value.toString();
                         break;
-                    case "domain":
+                    case "Domain":
                         domain=value.toString();
                         break;
-                    case "range":
+                    case "Range":
                         range=value.toString();
                         break;
                     default:break;

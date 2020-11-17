@@ -18,7 +18,8 @@ public class MainController {
     @RequestMapping("/owl")
     public String owlInitialize() throws FileNotFoundException {
         AbstractModel baseOnt = new AbstractModel();
-        baseOnt=yamlService.YamlToProps();
+        baseOnt.setClasses(yamlService.YamlToProps().getClasses());
+        baseOnt.setRelations(yamlService.YamlToProps().getRelations());
         ontService.ontInit(baseOnt);
         return "Owl initialized";
     }

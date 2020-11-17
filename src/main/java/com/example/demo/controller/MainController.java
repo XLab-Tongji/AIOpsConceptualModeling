@@ -14,9 +14,11 @@ import java.io.FileNotFoundException;
 @RequestMapping("/ont")
 public class MainController {
     OntService ontService = new OntService();
+    YamlService yamlService = new YamlService();
     @RequestMapping("/owl")
     public String owlInitialize() throws FileNotFoundException {
         AbstractModel baseOnt = new AbstractModel();
+        baseOnt=yamlService.YamlToProps();
         ontService.ontInit(baseOnt);
         return "Owl initialized";
     }

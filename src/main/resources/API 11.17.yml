@@ -1,0 +1,529 @@
+BaggageAPI: 
+
+  Type: class
+
+  myBaggage: The functions described here are one way to approach interacting with the Baggage purely via the Context. Depending on language idioms, a language API MAY implement these functions by providing a struct or immutable object that represents the entire Baggage contents. This construct could then be added or removed from the Context with a single operation.
+
+BaggageFunction: 
+
+  Type: class
+
+  myBaggageFunction: Baggage is used to annotate telemetry, adding context and information to metrics, traces, and logs. It is an abstract data type represented by a set of name/value pairs describing user-defined properties. Each name in Baggage MUST be associated with exactly one value.
+
+GetAllFunction: 
+
+  Type: class
+
+  myGetAllFunction: Returns the name/value pairs in the Baggage. The order of name/value pairs MUST NOT be significant. Based on the language specification, the returned value can be either an immutable collection or an immutable iterator to the collection of name/value pairs in the Baggage. OPTIONAL parameters: Context the context containing the Baggage from which to get the baggages.
+
+GetBaggageFunction: 
+
+  Type: class
+
+  myGetBaggageFunction: To access the value for a name/value pair by a prior event, the Baggage API MUST provide a function that takes a context and a name as input, and returns a value. Returns the value associated with the given name, or null if the given name is not present.
+
+SetBaggageFunction: 
+
+  Type: class
+
+  mySetBaggageFunction: To record the value for a name/value pair, the Baggage API MUST provide a function which takes a context, a name, and a value as input.
+
+RemoveBaggageFunction: 
+
+  Type: class
+
+  myRemoveBaggageFunction: To delete a name/value pair, the Baggage API MUST provide a function which takes a context and a name as input.
+
+ClearFunction: 
+
+  Type: class
+
+  myClearFunction: Returns a new Context with no Baggage.
+
+BaggagePropagation: 
+
+  Type: class
+
+  myBaggagePropagation: Baggage MAY be propagated across process boundaries or across any arbitrary boundaries for various reasons. The API layer or an extension package MUST include a TextMapPropagator implementing the W3C Baggage Specification.
+
+ConflictResolution: 
+
+  Type: class
+
+  myConflictResolution: If a new name/value pair is added and its name is the same as an existing name, than the new pair MUST take precedence.
+
+TracingAPI: 
+
+  Type: class
+
+  TimeStamp: A timestamp is the time elapsed since the Unix epoch.The minimal precision is milliseconds.The maximal precision is nanoseconds.
+
+  Duration: A duration is the elapsed time between two events.The minimal precision is milliseconds.The maximal precision is nanoseconds.
+
+TraceProvider: 
+
+  Type: class
+
+  myTraceProvider: TraceProvider is the entry point of the API. It provides access to Tracers.
+
+Tracer: 
+
+  Type: class
+
+  myTracer:  Tracer is the class responsible for creating Spans.
+
+Span: 
+
+  Type: class
+
+  mySpan: Span is the API to trace an operation.
+
+GetATracer: 
+
+  Type: class
+
+  Name: Required. This name must identify the instrumentation library and not the instrumented library.
+
+  Version: Optional. Specifies the version of the instrumentation library (e.g. 1.0.0).
+
+ContextInteraction: 
+
+  Type: class
+
+  myContextInteraction: The API MUST provide the following functionality to interact with a Context instance: Extract the Span from a Context instance; Insert the Span to a Context instance.
+
+  myContextInteractionImplicitly: the API SHOULD also provide the following functionality: Get the currently active span from the implicit context; Set the currently active span to the implicit context.
+
+Tracer: 
+
+  Type: class
+
+  myTracer: The tracer is responsible for creating Spans.
+
+CreateANewSpan: 
+
+  Type: class
+
+  myCreateANewSpan: A function that Tracer must provide.
+
+SpanContext: 
+
+  Type: class
+
+  TraceId: Hex, 32-hex-character lowercase string; Binary, 16-byte array
+
+  SpanId: Hex, 16-hex-character lowercase string; Binary, 8-byte array
+
+  myTraceFlags: Contain details about the trace. Unlike TraceState values, TraceFlags are present in all traces.
+
+  myTraceState: Carries vendor-specific trace identification data, represented as a list of key-value pairs.
+
+  IsValid: boolean
+
+  IsRemote: Boolean
+
+Span: 
+
+  Type: class
+
+  mySpan: A Span represents a single operation within a trace. Spans can be nested to form a trace tree. Each trace contains a root span, which typically describes the entire operation and, optionally, one or more sub-spans for its sub-operations.
+
+  Spanname: The Span name.
+
+  SpanId: An Immutable SpanContext that uniquely identifies the Span.
+
+  ParentSpan: In the form of a Span, SpanContext, or null.
+
+  Spankind: A SpanKind.
+
+  StartTimestamp: The time that Span created.
+
+  EndTimestamp: The time that contents of Span cannot be changed.
+
+  Attributes: Attributes.
+
+  LinksToOtherSpans: list
+
+  TimestampEvents: list
+
+  Status: A status.
+
+GetContext: 
+
+  Type: class
+
+  myGetContext: An API that returns the SpanContext for the given Span. 
+
+IsRecording: 
+
+  Type: class
+
+  myIsRecording: Returns true if this Span is recording information like events with the AddEvent operation, attributes using SetAttributes, status with SetStatus, etc.
+
+SetAttributes: 
+
+  Type: class
+
+  mySetAttributes: A Span MUST have the ability to set Attributes associated with it.
+
+AddEvents: 
+
+  Type: class
+
+  myAddEvents: A Span MUST have the ability to add events. Events have a time associated with the moment when they are added to the Span.
+
+SetStatus: 
+
+  Type: class
+
+  mySetStatus: Sets the Status of the Span. If used, this will override the default Span status, which is Unset.
+
+  StatusCode: One of the values listed below: Unset, Ok, Error.
+
+UpdateName: 
+
+  Type: class
+
+  myUpdateName: Updates the Span name. Upon this update, any sampling behavior based on Span name will depend on the implementation.
+
+End: 
+
+  Type: class
+
+  myEnd: Signals that the operation described by this span has now (or at the time optionally specified) ended.
+
+RecordException: 
+
+  Type: class
+
+  myRecordException: To facilitate recording an exception languages SHOULD provide a RecordException method if the language uses exceptions.
+
+SpanLifetime: 
+
+  Type: class
+
+  mySpanLifetime: Span lifetime represents the process of recording the start and the end timestamps to the Span object.
+
+SpanKind: 
+
+  Type: class
+
+  SERVER: Indicates that the span covers server-side handling of a synchronous RPC or other remote request. This span is the child of a remote CLIENT span that was expected to wait for a response.
+
+  CLIENT: Indicates that the span describes a synchronous request to some remote service. This span is the parent of a remote SERVER span and waits for its response.
+
+  PRODUCER: Indicates that the span describes the parent of an asynchronous request. This parent span is expected to end before the corresponding child CONSUMER span, possibly even before the child span starts. In messaging scenarios with batching, tracing individual messages requires a new PRODUCER span per message to be created.
+
+  CONSUMER: Indicates that the span describes the child of an asynchronous PRODUCER request.
+
+  INTERNAL: Default value. Indicates that the span represents an internal operation within an application, as opposed to an operations with remote parents or children.
+
+Metrics: 
+
+  Type: class
+
+  myMetrics: The OpenTelemetry Metrics API supports capturing measurements about the execution of a computer program at run time. The Metrics API is designed explicitly for processing raw measurements, generally with the intent to produce continuous summaries of those measurements, efficiently and simultaneously.
+
+Measurements: 
+
+  Type: class
+
+  myMeasurements: Metircs API is designed to capture and handle raw measurements.
+
+  Adding: The term adding is used to specify a characteristic of some measurements, meant to indicate that only the sum is considered useful information.
+
+  Grouping: Grouping measurements are used when the set of values, also known as the population, is presumed to have useful information.
+
+MetricInstruments: 
+
+  Type: class
+
+  myMetricInstruments: A metric instrument is a device for capturing raw measurements in the API.
+
+  Synchronicity: A synchronous instrument is called by the user in a distributed Context (i.e., with associated Span, Baggage, etc.). An asynchronous instrument is called by the SDK once per collection interval, lacking a Context.
+
+  Addingvs.Grouping: An adding instrument is one that records adding measurements, as opposed to a grouping instrument as described above.
+
+  Monotonicity: A monotonic instrument is an adding instrument, where the progression of sums is non-decreasing. Monotonic instruments are useful for monitoring rate information.
+
+Labels: 
+
+  Type: class
+
+  myLabels: Label is the term used to refer to a key-value attribute associated with a metric event, similar to a Span attribute in the tracing API. Each label categorizes the metric event, allowing events to be filtered and grouped for analysis.
+
+MeterInterface: 
+
+  Type: class
+
+  myMeterInterface: The API defines a Meter interface. This interface consists of a set of instrument constructors, and a facility for capturing batches of measurements in a semantically atomic way.
+
+Aggregation: 
+
+  Type: class
+
+  myAggregation: Aggregation refers to the process of combining multiple measurements into exact or estimated statistics about the measurements that took place during an interval of time, during program execution.
+
+  ValueRecorder: TBD issue 636
+
+  ValueObserver: LastValue
+
+TimeOfMetrics: 
+
+  Type: class
+
+  myTimeOfMetrics: Time is a fundamental property of metric events, but not an explicit one.
+
+MetircEventFormat: 
+
+  Type: class
+
+  Timestamp: implicit
+
+  InstrumentDefinition: name, kind, description, unit of measure
+
+  LabelSet: keys and values
+
+  Value: signed integer or floating point number
+
+  Resources: associated with the SDK at startup
+
+MeterProvider: 
+
+  Type: class
+
+  myMeterProvider: Used to maintain Meter instances, usually designed as singleton.
+
+  GetMeter: name, version
+
+InstrumentProperties: 
+
+  Type: class
+
+  myInstrumentProperties: Because the API is separated from the SDK, the implementation ultimately determines how metric events are handled. Therefore, the choice of instrument should be guided by semantics and the intended interpretation. The semantics of the individual instruments is defined by several properties, detailed here, to assist with instrument selection.
+
+Instruments: 
+
+  Type: class
+
+  Counter: Counter is the most common synchronous instrument. This instrument supports an Add(increment) function for reporting a sum, and is restricted to non-negative increments. The default aggregation is Sum, as for any adding instrument.
+
+  UpDownCounter: UpDownCounter is similar to Counter except that Add(increment) supports negative increments. This makes UpDownCounter not useful for computing a rate aggregation. It aggregates a Sum, only the sum is non-monotonic. It is generally useful for capturing changes in an amount of resources used, or any quantity that rises and falls during a request.
+
+  ValueRecorder: ValueRecorder is a grouping synchronous instrument useful for recording any grouping number, positive or negative. Values captured by a Record(value) are treated as individual events belonging to a distribution that is being summarized. ValueRecorder should be chosen either when capturing measurements that do not contribute meaningfully to a sum, or when capturing numbers that are adding in nature, but where the distribution of individual increments is considered interesting.
+
+  SumObserver: SumObserver is the asynchronous instrument corresponding to Counter, used to capture a monotonic sum with Observe(sum). "Sum" appears in the name to remind users that it is used to capture sums directly. Use a SumObserver to capture any value that starts at zero and rises throughout the process lifetime and never falls.
+
+  UpDownSumObserver: UpDownSumObserver is the asynchronous instrument corresponding to UpDownCounter, used to capture a non-monotonic count with Observe(sum). "Sum" appears in the name to remind users that it is used to capture sums directly. Use a UpDownSumObserver to capture any value that starts at zero and rises or falls throughout the process lifetime.
+
+  ValueObserver: ValueObserver is the asynchronous instrument corresponding to ValueRecorder, used to capture grouping measurements with Observe(value). These instruments are especially useful for capturing measurements that are expensive to compute, since it gives the SDK control over how often they are evaluated.
+
+SetsOfLabels: 
+
+  Type: class
+
+  mySetsOfLabels: Label handling can be a significant cost in the production of metric data overall.
+
+Concurrency: 
+
+  Type: class
+
+  myConcurrency: For languages which support concurrent execution the Metrics APIs provide specific guarantees and safeties. Not all of API functions are safe to be called concurrently.
+
+  MeterProvider: All methods are safe to be called concurrently.
+
+  Meter: All methods are safe to be called concurrently.
+
+  Instrument: All methods of any Instrument are safe to be called concurrently.
+
+  BoundInstument: All methods of any Bound Instrument are safe to be called concurrently.
+
+Relation7: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: BaggageFunction
+
+  Range: BaggageAPI
+
+Relation8: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: GetAllFunction
+
+  Range: BaggageAPI
+
+Relation9: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: GetBaggageFunction
+
+  Range: BaggageAPI
+
+Relation10: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: SetBaggageFunction
+
+  Range: BaggageAPI
+
+Relation11: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: RemoveBaggageFunction
+
+  Range: BaggageAPI
+
+Relation12: 
+
+  Type: relation
+
+  Name: isAMethodOf
+
+  Domain: ClearFunction
+
+  Range: BaggageAPI
+
+Relation13: 
+
+  Type: relation
+
+  Name: isComposedOf
+
+  Domain: TracingAPI
+
+  Range: TraceProvider
+
+Relation14: 
+
+  Type: relation
+
+  Name: isComposedOf
+
+  Domain: TracingAPI
+
+  Range: Tracer
+
+Relation15: 
+
+  Type: relation
+
+  Name: isComposedOf
+
+  Domain: TracingAPI
+
+  Range: Span
+
+Relation16: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: TraceProvider
+
+  Range: GetATracer
+
+Relation17: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Tracer
+
+  Range: CreateANewSpan
+
+Relation18: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: GetContext
+
+Relation19: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: IsRecording
+
+Relation20: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: SetAttributes
+
+Relation21: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: AddEvents
+
+Relation22: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: SetStatus
+
+Relation23: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: UpdateName
+
+Relation24: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: End
+
+Relation25: 
+
+  Type: relation
+
+  Name: mustProvide
+
+  Domain: Span
+
+  Range: RecordException

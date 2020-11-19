@@ -1,0 +1,179 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.1="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Sampling "
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#CounterMetrics">
+    <j.0:myCounterMetrics>提供计数，如消息队列的信息的数量，可以上升、保持不变但不可以下降，必定为非负值，数据类型为double或long</j.0:myCounterMetrics>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Collector">
+    <j.0:myCollector>OpenTelemetry collector是一组组件，可以从OpenTelementry或其他监控/跟踪库（Jaeger、Prometheus等）检测的进程中收集traces、metrics和其他遥测数据（例如logs），进行聚合和智能采样，并将traces和metrics导出到一个或多个监视/跟踪后端。Collector允许扩展和转换收集到的遥测数据（如添加附加属性或删除个人信息）。OpenTelemetry collector有两种主要的运行模式：Agent（与应用程序一起在本地运行的守护程序）和Collector（独立运行的服务）。</j.0:myCollector>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel">
+    <j.0:myLogDataModel>定义了OpenTelemetry理解日志和事件的方式，它能够表达不同来源的日志，如应用程序日志文件、机器生成的事件、系统日志等</j.0:myLogDataModel>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span">
+    <j.0:mySpan>Span是一个基本工作单元，每一次远程过程调用或者数据库调用都会生成一个Span。</j.0:mySpan>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Propagator">
+    <j.0:myPropagator>使用传播器来序列化和反序列化cross-cutting concern值。</j.0:myPropagator>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing">
+    <j.0:myDistributedTracing>Distributed tracing是一组由单个逻辑操作触发、综合了多个应用程序组件（component）的事件。Distributed tracing包含跨进程、网络和安全边界的事件。</j.0:myDistributedTracing>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Metrics">
+    <j.0:myMetrics>一种聚合数值，存储空间很小，可以观察系统的状态和趋势，但对于问题定位缺乏细节展示</j.0:myMetrics>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#ContextPropagation">
+    <j.0:myContextPropagation>所有OpenTelemetry的横切关注点（如metrics和traces）共享一个底层上下文机制，用于在分布式事务的整个生命周期内存储状态和访问数据。</j.0:myContextPropagation>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry">
+    <j.0:myOpenTelemetry>OpenTelemetry是一组用于检测、生成、收集、导出遥测数据（包括metrics、logs和traces）的工具、API及SDK的集合，它提供了实现云原生系统上软件可观察性的框架。</j.0:myOpenTelemetry>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Resources">
+    <j.0:myResources>Resources捕获有关记录遥测的实体的信息。Resource可以捕获实体标识的整个层次结构。它可以描述云中的主机和特定的容器或进程中运行的应用程序。</j.0:myResources>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Trace">
+    <j.0:myTrace>一个完整的调用链路追踪，一个Trace表示了一个事物在分布式系统中的执行过程，一个Trace是由多个Span组成的一个Tree（DAG的一种），同时Trace也是整个Tree的Root。</j.0:myTrace>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LinksBetweenSpans">
+    <j.0:myLinksBetweenSpans>一个span可以链接到零或多个具有因果关系的span，链接也可以指向同一个trace内部的span，或是跨trace指向其他trace中的span</j.0:myLinksBetweenSpans>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Baggage">
+    <j.0:myBaggage>Baggage用于索引同一服务中的可观察事件，其属性由同一事务中的先前服务提供。这种机制有助于建立这些可观察事件之间的因果关系。Baggage主要用于传递OpenTelemetry具有可观察性的系统的值，这些值可以用作metrics的附加维度，或logs和traces的附加上下文。</j.0:myBaggage>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#GaugeMetrics">
+    <j.0:myGaugeMetrics>提供瞬时值，如cpu使用率、内存占用率等，可以上升也可以下降，可以为正也可以为负，数据类型为double或long</j.0:myGaugeMetrics>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#InstrumentationLibraries">
+    <j.0:myInstrumentationLibraries>为另一个库启用OpenTelemetry可观测性的库称为Instrumentation Libraries（插桩库），其能够使每个库和应用程序直接调用OpenTelemetry API，实现开箱即用。</j.0:myInstrumentationLibraries>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#null"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Test"/>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#spanContext">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#BaggageKey">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Baggage"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#endTime">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Name">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Body">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#startTime">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#TraceID">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Trace"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Samplingbit">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#parentSpanID">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#ststusCode">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#spanKind">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Tracestate">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#events">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Attributes">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Resource">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Type">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#DistributedTracing"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#OpenTelemetry"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#GaugeMetrics"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Metrics"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Propagator"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#CounterMetrics"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#ContextPropagation"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#InstrumentationLibraries"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Resources"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Collector"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LinksBetweenSpans"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Baggage"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Trace"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#links">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#tracer">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SeverityText">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#attributes">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#lock">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#statusMessage">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#TraceFlags">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#name">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#ended">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#TraceId">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Timestamp">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanId">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SpanContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#BaggageValue">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Baggage"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#SeverityNumber">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#LogDataModel"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myResources"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myLogDataModel"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myCollector"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myTrace"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myLinksBetweenSpans"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myOpenTelemetry"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myPropagator"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myGaugeMetrics"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myContextPropagation"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#mySpan"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myBaggage"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myInstrumentationLibraries"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myDistributedTracing"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myCounterMetrics"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#myMetrics"/>
+</rdf:RDF>

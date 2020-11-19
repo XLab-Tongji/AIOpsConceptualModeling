@@ -13,26 +13,45 @@ import java.util.Set;
 public class OntService {
     OntDao ontDao = new OntDao();
     public void ontInit(AbstractModel baseOnt) throws FileNotFoundException {
-        Map<String, Set<Tuple<String, String>>> ontClasses=baseOnt.getClasses();
-        Map<String, Triple<String, String, String>> ontRelations=baseOnt.getRelations();
+        Map<String, Set<Triple<Object, String, Object>>> ontClasses=baseOnt.getClasses();
+        Map<String, Set<Tuple<Object, Object>>> ontRelations=baseOnt.getRelations();
 
-        for(Map.Entry<String, Set<Tuple<String, String>>> entry : ontClasses.entrySet()){
+        for(Map.Entry<String, Set<Triple<Object, String, Object>>> entry : ontClasses.entrySet()){
             String newClass = entry.getKey();
-            Set<Tuple<String, String>> props = entry.getValue();
+            Set<Triple<Object, String, Object>> props = entry.getValue();
             ontDao.createClass(newClass);
-            for(Tuple<String,String>prop:props){
-                String propName=prop.first;
-                String propDesc=prop.second;
-                ontDao.addProp(propName,newClass,propDesc);
+            for(Triple<Object, String, Object> prop:props){
+                Object propName=prop.first;
+                String pN = propName.toString();
+                Object propDesc=prop.third;
+                String pD = propDesc.toString();
+                String type=prop.second;
+                ontDao.addDataProp(newClass, pN, type, pD);
             }
         }
 
-        for(Map.Entry<String, Triple<String, String, String>> entry : ontRelations.entrySet()){
-            Triple<String,String,String> triple= entry.getValue();
-            String class1=triple.first;
-            String class2=triple.third;
-            String relation=triple.second;
-            ontDao.optProp(relation,class1,class2);
+        for(Map.Entry<String, Set<Tuple<Object, Object>>> entry : ontRelations.entrySet()){
+            Set<Tuple<Object, Object>> tuples= entry.getValue();
+            String domain = null;
+            String range = null;
+            String relation = null;
+            for(Tuple<Object, Object> tuple:tuples){
+                String type=tuple.getFirst().toString();
+                Object value=tuple.getSecond();
+                switch (type){
+                    case "Name":
+                        relation=value.toString();
+                        break;
+                    case "Domain":
+                        domain=value.toString();
+                        break;
+                    case "Range":
+                        range=value.toString();
+                        break;
+                    default:break;
+                }
+            }
+            ontDao.optProp(relation,domain,range);
 
         }
     }

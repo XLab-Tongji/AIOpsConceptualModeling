@@ -9,7 +9,7 @@ import com.example.demo.model.*;
 
 import java.io.FileNotFoundException;
 import java.util.*;
-
+import com.example.demo.service.YamlService;
 
 /**
  * @author xjt
@@ -17,20 +17,10 @@ import java.util.*;
 @RestController
 @RequestMapping("/yaml")
 public class YamlController {
-    OntService ontService = new OntService();
-    YamlDao myyaml = new YamlDao("overview 11.8.yml");
 
-    AbstractModel primeModel = new AbstractModel();
+    YamlService yamlService = new YamlService();
     @RequestMapping("/init")
-    public AbstractModel YamlToProps() throws FileNotFoundException {
-
-        Map<String,Triple<String,String,String>> myRelations=  myyaml.yamlToRelations();
-        Map<String, Set<Tuple<String,String>>> myProps = myyaml.yamlToClass();
-        primeModel.setClasses(myProps);
-        primeModel.setRelations(myRelations);
-        OntService ontService = new OntService();
-        ontService.ontInit(primeModel);
-        return primeModel;
-
+    public AbstractModel yamlToProps() throws FileNotFoundException {
+        return yamlService.YamlToProps();
     }
 }

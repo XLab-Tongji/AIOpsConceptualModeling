@@ -1,4 +1,5 @@
 package com.example.demo.dao;
+import com.github.jsonldjava.utils.Obj;
 import org.yaml.snakeyaml.*;
 import java.io.InputStream;
 import java.util.*;
@@ -16,11 +17,11 @@ public class YamlDao {
       path = s;
     }
 
-    public Map<String,Triple<String, String,String>> relations = new HashMap<>();
+    public Map<String,Set<Tuple<Object,Object>>> relations = new HashMap<>();
 
 
-    public Map<String,Set<Tuple<String,String>>> classAndProps = new HashMap<>();
-    public Map<String, Triple<String,String,String>> yamlToRelations() {
+    public Map<String,Set<Triple<Object,String,Object>>> classAndProps = new HashMap<>();
+    public Map<String, Set<Tuple<Object,Object>>> yamlToRelations() {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
@@ -30,23 +31,48 @@ public class YamlDao {
 
 
         for(Map.Entry<String, Object> entry : obj.entrySet()){
-            String classes = entry.getKey();
+            String relation = entry.getKey();
             Object props = entry.getValue();
 
-            if(props instanceof String)
+            if(props instanceof Map)
             {
-                String analyse = props.toString();
-                String[] myana = analyse.split("--");
-                String class1 = myana[0];
-                String relation = myana[1];
-                String class2 = myana[2];
-                Triple<String,String,String> rel = new Triple<>();
-                rel.setFirst(class1);
-                rel.setSecond(relation);
-                rel.setThird(class2);
-                relations.put(classes,rel);
-            }
+                int type = 0;
+                HashSet<Tuple<Object,Object>> allProps = new HashSet<>();
+                for(Map.Entry<?, ?> entry2 : ((Map<?, ?>) props).entrySet())
+                {
+                    Object prop =  entry2.getKey();
+                    Object value = entry2.getValue();
+                    if(prop.toString().equals("Type")&&value.toString().equals("class")){
+                        type=1;
+                        //是类
+                    }
+                    if(prop.toString().equals("Type")&&value.toString().equals("relation")){
+                        type=2;
+                        //是关系
+                    }
+                }
+                if(type==1){
+                    continue;
+                }
+                if(type==2){
+                    for(Map.Entry<?, ?> entry2 : ((Map<?, ?>) props).entrySet())
+                    {
+                        Object prop =  entry2.getKey();
+                        Object value = entry2.getValue();
+                        Tuple<Object,Object> newTuple = new Tuple<>();
+                        newTuple.setFirst(prop.toString());
+                        newTuple.setSecond(value.toString());
+                        allProps.add(newTuple);
 
+                    }
+                }
+
+
+                System.out.println(relations);
+                System.out.println(allProps);
+
+                relations.put(relation,allProps);
+            }
 
         }
 
@@ -55,31 +81,57 @@ public class YamlDao {
 
 
 
-
-    public Map<String, Set<Tuple<String,String>>> yamlToClass(){
+    public Map<String, Set<Triple<Object,String,Object>>> yamlToClass(){
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
                 .getResourceAsStream(path);
         Map<String, Object> obj = yaml.load(inputStream);
 
-
         for(Map.Entry<String, Object> entry : obj.entrySet()){
             String classes = entry.getKey();
             Object props = entry.getValue();
             if(props instanceof Map)
             {
-                HashSet<Tuple<String,String>> allProps = new HashSet<>();
+                int type = 0;
+                HashSet<Triple<Object,String,Object>> allProps = new HashSet<>();
                 for(Map.Entry<?, ?> entry2 : ((Map<?, ?>) props).entrySet())
                 {
                     Object prop =  entry2.getKey();
                     Object value = entry2.getValue();
-                        Tuple<String,String> newTuple = new Tuple<>();
-                        newTuple.setFirst(prop.toString());
-                        newTuple.setSecond(value.toString());
-                        allProps.add(newTuple);
-
+                    if(prop.toString().equals("Type")&&value.toString().equals("class")){
+                        type=1;
+                        //是类
+                    }
+                    if(prop.toString().equals("Type")&&value.toString().equals("relation")){
+                        type=2;
+                        //是关系
+                    }
                 }
+                if(type==1){
+                    for(Map.Entry<?, ?> entry2 : ((Map<?, ?>) props).entrySet())
+                    {
+                        Object prop =  entry2.getKey();
+                        Object value = entry2.getValue();
+                        Triple<Object,String,Object> newTriple = new Triple<>();
+                        newTriple.setFirst(prop.toString());
+                        String myprop = prop.toString();
+                        if(myprop.charAt(0)=='m'&&myprop.charAt(1)=='y'){
+                            newTriple.setSecond("label");
+                        }
+                        else {
+                            newTriple.setSecond("ID");
+                        }
+
+                        newTriple.setThird(value.toString());
+                        allProps.add(newTriple);
+
+                    }
+                }
+                if(type==2){
+                    continue;
+                }
+
 
                 System.out.println(classes);
                 System.out.println(allProps);

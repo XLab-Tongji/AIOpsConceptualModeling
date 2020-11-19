@@ -11,16 +11,10 @@ import java.util.Set;
 @Data
 public class AbstractModel {
     /**
-     * Map classes describes class name and a set of its properties and datatype of which.
-     * Map relations describes relation name and a set of its domains and ranges.
+     * Map classes describes class name and a set of its properties,datatype of which and description.
+     * Map relations describes relation identification and a set of its descriptions like Domain : domain,
+     * Relation : relation name,Range : range.
      */
-    private Map<String, Set<Tuple<String, String>>> classes;
-    private Map<String, Triple<String, String, String>> relations;
-    public Map<String, Set<Tuple<String, String>>> getClasses(){
-        return classes;
-    }
-    public Map<String, Triple<String, String, String>> getRelations(){
-        return relations;
-    }
-
+    private Map<String, Set<Triple<Object, String, Object>>> classes;
+    private Map<String, Set<Tuple<Object, Object>>> relations;
 }

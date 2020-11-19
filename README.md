@@ -29,4 +29,9 @@ Author lidetao
 
 1.实体已变更为class+relation，在model层定义了一个二元组来保存relation的domain和range
 
+Develop log 11.15.2020
+Author lidetao
 
+1.Annotation property和Datatype property已区分并重写相关DAO和service方法
+2.Object property相关方法已修正,现在可以正确地添加多个domain和range
+3.类具有的固定属性现在用Annotation property表达，其他属性用Datatype property表达

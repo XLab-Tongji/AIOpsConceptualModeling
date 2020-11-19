@@ -1,10 +1,8 @@
 package com.example.demo.dao;
 
-import org.apache.jena.ontology.ObjectProperty;
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.vocabulary.XSD;
 import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
@@ -28,7 +26,7 @@ public class OntDao {
         String message = "Class created";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
-        OntClass sample = baseOnt.createClass(NS + newClass);
+        baseOnt.createClass(NS + newClass);
         FileOutputStream fOut;
         fOut = new FileOutputStream(result);
         baseOnt.write(fOut);
@@ -45,11 +43,18 @@ public class OntDao {
         OntClass rangeClass = baseOnt.getOntClass(NS + range);
         if(domain != null && domainClass != null && range != null && rangeClass != null)
         {
-            domainClass.addProperty(prop,rangeClass);
+            prop.addDomain(domainClass);
             System.out.println("Domain added");
+            prop.addRange(rangeClass);
+            System.out.println("Range added");
         }
-        else{
-            message="Domain not exist!";
+        else {
+            if(domain == null || domainClass == null){
+                message="Domain not exist!";
+            }
+            if(range == null || rangeClass == null){
+                message="Range not exist!";
+            }
         }
         FileOutputStream fOut;
         fOut = new FileOutputStream(result);
@@ -97,5 +102,35 @@ public class OntDao {
             sample.remove();
         }
         return message;
+    }
+    public void addDataProp(String father, String name, String type, String desc) throws FileNotFoundException {
+        OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
+        baseOnt.read(result);
+
+        String label = "label";
+        String integer = "integer";
+        String ID = "ID";
+
+        OntClass baseOntOntClass = baseOnt.getOntClass(NS + father);
+
+        if(type.equals(label))
+        {
+            AnnotationProperty description = baseOnt.createAnnotationProperty(NS + name);
+            baseOntOntClass.addProperty(description, desc);
+        }
+        else{
+            OntProperty dataProp = baseOnt.createDatatypeProperty(NS + name);
+            dataProp.addDomain(baseOntOntClass);
+            if(desc.equals(integer)){
+                dataProp.addRange(XSD.integer);
+            }
+            if(desc.equals(ID)){
+                dataProp.addRange(XSD.ID);
+            }
+        }
+
+        FileOutputStream fOut;
+        fOut = new FileOutputStream(result);
+        baseOnt.write(fOut);
     }
 }

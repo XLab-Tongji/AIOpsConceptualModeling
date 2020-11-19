@@ -36,7 +36,7 @@ Author lidetao
 2.Object property相关方法已修正,现在可以正确地添加多个domain和range
 3.类具有的固定属性现在用Annotation property表达，其他属性用Datatype property表达
 
-开发/使用工具：
+开发工具：
 1.idea
 2.jena+springboot+gradle
 3.本体可视化工具：http://www.visualdataweb.de/webvowl/

@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import org.apache.jena.ontology.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.vocabulary.XSD;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
@@ -11,13 +12,13 @@ import java.io.FileOutputStream;
 /**
  * @author Raven
  */
-@Component
+
 public class OntDao {
     private final String NS;
     String result = "./data/output.owl";
-
-    public OntDao() {
-        String source = "http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt";
+    public OntDao(String layer) {
+        String source = "http://www.semanticweb.org/raven/ontologies/2020/10/";
+        source = source + layer;
         this.NS = source + "#";
     }
 

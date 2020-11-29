@@ -9,7 +9,7 @@ import com.example.demo.model.*;
  * @author xjt
  */
 public class YamlService {
-    OntService ontService = new OntService();
+    OntService ontService = new OntService("test");
     YamlDao myyaml = new YamlDao("API 11.17.yml");
 
     AbstractModel primeModel = new AbstractModel();
@@ -19,7 +19,7 @@ public class YamlService {
         Map<String, Set<Triple<Object,String,Object>>> myProps = myyaml.yamlToClass();
         primeModel.setClasses(myProps);
         primeModel.setRelations(myRelations);
-        OntService ontService = new OntService();
+        OntService ontService = new OntService("test");
         ontService.ontInit(primeModel);
         return primeModel;
     }

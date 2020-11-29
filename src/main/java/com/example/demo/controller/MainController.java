@@ -13,14 +13,30 @@ import java.io.FileNotFoundException;
 @RestController
 @RequestMapping("/ont")
 public class MainController {
-    OntService ontService = new OntService();
-    YamlService yamlService = new YamlService();
-    @RequestMapping("/owl")
-    public String owlInitialize() throws FileNotFoundException {
+    public String owlInitialize(String layer) throws FileNotFoundException {
+        OntService ontService = new OntService(layer);
+        YamlService yamlService = new YamlService();
         AbstractModel baseOnt = new AbstractModel();
         baseOnt.setClasses(yamlService.YamlToProps().getClasses());
         baseOnt.setRelations(yamlService.YamlToProps().getRelations());
         ontService.ontInit(baseOnt);
         return "Owl initialized";
     }
+    @RequestMapping("/dataModel")
+    public void dataModel() throws FileNotFoundException {
+        String layer = "DataModel";
+        owlInitialize(layer);
+    }
+    @RequestMapping("/API")
+    public void API() throws FileNotFoundException {
+        String layer = "API";
+        owlInitialize(layer);
+    }
+    @RequestMapping("/SDK")
+    public void SDK() throws FileNotFoundException {
+        String layer = "SDK";
+        owlInitialize(layer);
+    }
+
+
 }

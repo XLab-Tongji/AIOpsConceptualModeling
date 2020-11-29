@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification"
+     xml:base="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:logging="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification/logging"
+     xmlns:metrics="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification/metrics"
+     xmlns:tracing="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification/tracing">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification">
+        <owl:versionIRI rdf:resource="urn:absolute:1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-aParentSpanOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-aParentSpanOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-isIdentifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-isIdentifiedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-linksToOtherSpans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-linksToOtherSpans">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#logging-contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#logging-contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Logging"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#logging-isRelatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#logging-isRelatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-isRelatedWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Metrics"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-includes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-isComposedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#metrics-isComposedOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Tracing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracingDataModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-includes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracingDataModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-isRelatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#tracing-isRelatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Attributes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Attributes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:comment>Additional information about the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Body -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Body">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:comment>The body of the log record.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Short event identifier.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Resource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Resource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:comment>Describes the source of the log.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SeverityNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SeverityNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Numerical value of the severity.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SeverityText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SeverityText">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The severity text (also known as log level).</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SpanId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-SpanId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Request span id.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-Timestamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Time when the event occurred.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-TraceFlags -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-TraceFlags">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#byte"/>
+        <rdfs:comment>W3C trace flag.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-TraceId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogging-TraceId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Request trace id.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata"/>
+        <rdfs:comment>Description of the metric, which can be used in documentation.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Labels -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Labels">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint"/>
+        <rdfs:comment>Zero or more key-value pairs associated with the data point.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata"/>
+        <rdfs:comment>Name of the metric, including its DNS name prefix. It must be unique.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-StartTimeUnixNano -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-StartTimeUnixNano">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint"/>
+        <rdfs:comment>StartTimeUnixNano MUST be set to the start of the interval when the data&apos;s type includes an AggregationTemporality. This field is not set otherwise.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-TimeUnixNano -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-TimeUnixNano">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint"/>
+        <rdfs:comment>TimeUnixNano MUST be set to:
+- the moment when an aggregation is reported (independent of the aggregation temporality).
+- the instantaneous time of the event.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Unit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetrics-Unit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata"/>
+        <rdfs:comment>Unit in which the metric value is reported. Follows the format described by http://unitsofmeasure.org/ucum.html.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Attributes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Attributes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:comment>Attribute values expressing a numerical value of zero, an empty string, or an empty array are considered meaningful and MUST be stored and passed on to processors / exporters.
+
+Attribute values of null are not valid and attempting to set a null value is undefined behavior.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-EndTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-EndTimestamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Events -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Events">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:comment>A list of timestamped Events</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+        <rdfs:comment>A valid span identifier is an 8-byte array with at least one non-zero byte.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanKind -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanKind">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:comment>SpanKind describes the relationship between the Span, its parents, and its children in a Trace. SpanKind describes two independent properties that benefit tracing systems during analysis.
+
+The first property described by SpanKind reflects whether the Span is a remote child or parent. Spans with a remote parent are interesting because they are sources of external load. Spans with a remote child are interesting because they reflect a non-local system dependency.
+
+The second property described by SpanKind reflects whether a child Span represents a synchronous call. When a child span is synchronous, the parent is expected to wait for it to complete under ordinary circumstances. It can be useful for tracing systems to know this property, since synchronous Spans may contribute to the overall trace latency. Asynchronous scenarios can be remote or local.
+
+In order for SpanKind to be meaningful, callers should arrange that a single Span does not serve more than one purpose. For example, a server-side span should not be used directly as the parent of another remote span. As a simple guideline, instrumentation should create a new Span prior to extracting and serializing the SpanContext for a remote call.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-SpanName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:comment>The span name concisely identifies the work represented by the Span, for example, an RPC method name, a function name, or the name of a subtask or stage within a larger computation. The span name SHOULD be the most general string that identifies a (statistically) interesting class of Spans, rather than individual Span instances while still being human-readable. That is, &quot;get_user&quot; is a reasonable name, while &quot;get_user/314159&quot;, where &quot;314159&quot; is a user ID, is not a good name due to its high cardinality. Generality SHOULD be prioritized over human-readability.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-StartTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-StartTimeStamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-Status">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+        <rdfs:comment>Status is structurally defined by the following properties:
+- StatusCode, one of the values listed below.
+- Optional Description that provides a descriptive message of the Status.
+StatusCode is one of the following values:
+    - Unset: the default status.
+    - Ok: the operation has been validated by an Application developer or Operator to have completed successfully.
+    - Error: the operation contains an error.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceFlags -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceFlags">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+        <rdfs:comment>Contain details about the trace. Unlike TraceState values, TraceFlags are present in all traces. The current version of the specification only supports a single flag called sampled.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+        <rdfs:comment>A valid trace identifier is a 16-byte array with at least one non-zero byte.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceState -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracing-TraceState">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+        <rdfs:comment>Carries vendor-specific trace identification data, represented as a list of key-value pairs. TraceState allows multiple tracing systems to participate in the same trace. It is fully described in the W3C Trace Context specification.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Logging -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Logging">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#TelemetryDataForObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Metrics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Metrics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#TelemetryDataForObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELLogDataModel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataModel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDataPoint"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleGauge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleGauge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleHistogram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleHistogram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleSum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleSum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleSummary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsDoubleSummary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntGauge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntGauge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntHistogram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntHistogram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntSum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsIntSum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELMetricsMetadata"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpan"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELSpanContext"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracingDataModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#OTELTracingDataModel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#TelemetryDataForObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#TelemetryDataForObservation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Tracing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#Tracing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hyq/ontologies/2020/10/opentelemetry-specification#TelemetryDataForObservation"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

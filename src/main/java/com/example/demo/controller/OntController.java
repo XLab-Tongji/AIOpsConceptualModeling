@@ -11,7 +11,8 @@ import java.io.FileNotFoundException;
 @RestController
 @RequestMapping("/init")
 public class OntController {
-    OntDao ontDao = new OntDao();
+    String object = "DataModel";
+    OntDao ontDao = new OntDao(object);
 
     @RequestMapping("/index")
     public String sayHello(){

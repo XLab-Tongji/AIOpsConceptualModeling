@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.dao.*;
 import com.example.demo.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -11,8 +13,12 @@ import java.util.Set;
  * @author WuYue
  */
 public class OntService {
-    OntDao ontDao = new OntDao();
+    private String layer;
+    public OntService(String layer) {
+        this.layer = layer;
+    }
     public void ontInit(AbstractModel baseOnt) throws FileNotFoundException {
+        OntDao ontDao = new OntDao(layer);
         Map<String, Set<Triple<Object, String, Object>>> ontClasses=baseOnt.getClasses();
         Map<String, Set<Tuple<Object, Object>>> ontRelations=baseOnt.getRelations();
 

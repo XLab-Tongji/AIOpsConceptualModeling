@@ -1,0 +1,35 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "statuscode": "200"
+                },
+                "value": [
+                    1606640975.061,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "statuscode": "302"
+                },
+                "value": [
+                    1606640975.061,
+                    "0"
+                ]
+            },
+            {
+                "metric": {
+                    "statuscode": "502"
+                },
+                "value": [
+                    1606640975.061,
+                    "0"
+                ]
+            }
+        ]
+    }
+}

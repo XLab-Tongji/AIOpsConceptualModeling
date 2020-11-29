@@ -1,0 +1,53 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "job": "kube-state-metrics"
+                },
+                "value": [
+                    1606640750.481,
+                    "2.8226005130000003"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "node-exporter"
+                },
+                "value": [
+                    1606640750.481,
+                    "1.078675372"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "catalogue-db-exporter"
+                },
+                "value": [
+                    1606640750.481,
+                    "1.052911258"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "kubelet"
+                },
+                "value": [
+                    1606640750.481,
+                    "0.268357891"
+                ]
+            },
+            {
+                "metric": {
+                    "job": "apiserver"
+                },
+                "value": [
+                    1606640750.481,
+                    "0.147021908"
+                ]
+            }
+        ]
+    }
+}

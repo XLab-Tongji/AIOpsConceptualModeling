@@ -15,13 +15,12 @@ public class YamlService {
     AbstractModel primeModel = new AbstractModel();
     public AbstractModel YamlToProps() throws FileNotFoundException {
 
-        Map<String,Set<Tuple<Object,Object>>> myRelations=  myyaml.yamlToRelations();
-        Map<String, Set<Triple<Object,String,Object>>> myProps = myyaml.yamlToClass();
+        Map<String, Set<Tuple<Object, Object>>> myRelations = myyaml.yamlToRelations();
+        Map<String, Set<Triple<Object, String, Object>>> myProps = myyaml.yamlToClass();
         primeModel.setClasses(myProps);
         primeModel.setRelations(myRelations);
         OntService ontService = new OntService();
         ontService.ontInit(primeModel);
         return primeModel;
     }
-
 }

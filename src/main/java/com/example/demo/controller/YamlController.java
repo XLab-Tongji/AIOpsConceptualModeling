@@ -18,7 +18,8 @@ import com.example.demo.service.YamlService;
 @RequestMapping("/yaml")
 public class YamlController {
 
-    YamlService yamlService = new YamlService();
+    String layer;
+    YamlService yamlService = new YamlService(layer);
     @RequestMapping("/init")
     public AbstractModel yamlToProps() throws FileNotFoundException {
         return yamlService.YamlToProps();

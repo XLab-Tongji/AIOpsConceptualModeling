@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 public class MainController {
     public String owlInitialize(String layer) throws FileNotFoundException {
         OntService ontService = new OntService(layer);
-        YamlService yamlService = new YamlService();
+        YamlService yamlService = new YamlService(layer);
         AbstractModel baseOnt = new AbstractModel();
         baseOnt.setClasses(yamlService.YamlToProps().getClasses());
         baseOnt.setRelations(yamlService.YamlToProps().getRelations());

@@ -1,0 +1,18 @@
+status:String
+data:
+    resultType:String
+    result:
+        - metric:
+            statuscode:int
+            _name:String
+            endpoint:String
+            instance:String
+            interval:String
+            job:String
+            namespace:String
+            pod:String
+            quantile:double
+            service:String
+        value:
+            - unix timestamp
+            - double

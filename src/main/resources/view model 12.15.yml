@@ -1,0 +1,131 @@
+jaeger:
+  Type: class
+  status: String
+dataOfJaeger:
+  Type: class
+  resultType: trace[]
+trace:
+  Type: class
+  traceID: string
+  spans: span[]
+  processes: process[]
+  warnings: string
+span:
+  Type: class
+  traceID: string
+  spanID: string
+  operationName:
+  references: reference[]
+  startTime: Unix timestamp
+  duration: long long int
+  tags: tag[]
+  logs: array
+  processID: string
+  warnings: string/null
+reference:
+  Type: class
+  refType: string
+  traceID: string
+  spanID: string
+tag:
+  Type: class
+  key: string
+  type: string
+  value: string
+process:
+  Type: class
+  serviceName: string
+  tags: tag[]
+Relation1:
+  Type: relation
+  Name: isAComponentOf
+  Domain: span
+  Range: trace
+Relation2:
+  Type: relation
+  Name: isAComponentOf
+  Domain: reference
+  Range: span
+Relation3:
+  Type: relation
+  Name: isAComponentOf
+  Domain: tag
+  Range: span
+Relation4:
+  Type: relation
+  Name: isAComponentOf
+  Domain: process
+  Range: trace
+Relation5:
+  Type: relation
+  Name: isDataOf
+  Domain: jaeger
+  Range: dataOfJaeger
+Relation6:
+  Type: relation
+  Name: isAComponentOf
+  Domain: dataOfJaeger
+  Range: trace
+
+Prometheus:
+  Type: class
+  status: String
+dataOfPrometheus:
+  Type: class
+  resultType: String
+result:
+  Type: class
+  value: double[]
+metric:
+  Type: class
+  statuscode: int
+  _name: String
+  endpoint: String
+  instance: String
+  interval: String
+  job: String
+  namespace: String
+  pod: String
+  quantile: double
+  service: String
+Relation7:
+  Type: relation
+  Name: isDataOf
+  Domain: data
+  Range: Prometheus
+Relation8:
+  Type: relation
+  Name: isResultOf
+  Domain: result
+  Range: data
+Relation9:
+  Type: relation
+  Name: isAComponentOf
+  Domain: metric
+  Range: result
+
+Kibana:
+  Type: class
+  status: String
+dataOfKibana:
+  Type: class
+  resultType: log[]
+log:
+  Type: class
+  time: String
+  level: String
+  msg: String
+  source: String
+Relation10:
+  Type: relation
+  Name: isDataOf
+  Domain: dataOfKibana
+  Range: Kibana
+Relation11:
+  Type: relation
+  Name: isAComponentOf
+  Domain: log
+  Range: dataOfKibana
+
+
+

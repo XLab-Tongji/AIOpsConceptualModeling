@@ -112,6 +112,10 @@ dataOfKibana:
   resultType: log[]
 log:
   Type: class
+  time: String
+  level: String
+  msg: String
+  source: String
 Relation10:
   Type: relation
   Name: isDataOf

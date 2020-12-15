@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.YamlDao;
 import com.github.jsonldjava.utils.Obj;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.service.*;
@@ -18,10 +19,11 @@ import com.example.demo.service.YamlService;
 @RequestMapping("/yaml")
 public class YamlController {
 
-    String layer;
-    YamlService yamlService = new YamlService(layer);
-    @RequestMapping("/init")
-    public AbstractModel yamlToProps() throws FileNotFoundException {
+    @RequestMapping("/init/{layer}")
+
+    public AbstractModel yamlToProps(@PathVariable String layer) throws FileNotFoundException {
+        YamlService yamlService = new YamlService(layer);
+        System.out.println(layer);
         return yamlService.YamlToProps();
     }
 }

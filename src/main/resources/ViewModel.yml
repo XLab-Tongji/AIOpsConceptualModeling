@@ -14,14 +14,14 @@ span:
   Type: class
   traceID: string
   spanID: string
-  operationName:
+  operationName: string
   references: reference[]
   startTime: Unix timestamp
   duration: long long int
   tags: tag[]
   logs: array
   processID: string
-  warnings: string/null
+  warnings: string/numm
 reference:
   Type: class
   refType: string
@@ -126,6 +126,4 @@ Relation11:
   Name: isAComponentOf
   Domain: log
   Range: dataOfKibana
-
-
 

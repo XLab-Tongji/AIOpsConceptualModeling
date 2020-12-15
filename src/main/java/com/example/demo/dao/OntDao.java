@@ -15,11 +15,12 @@ import java.io.FileOutputStream;
 
 public class OntDao {
     private final String NS;
-    String result = "./data/output.owl";
+    public String result ;
     public OntDao(String layer) {
         String source = "http://www.semanticweb.org/raven/ontologies/2020/10/";
         source = source + layer;
         this.NS = source + "#";
+        this.result = "./data/"+layer+".owl";
     }
 
 

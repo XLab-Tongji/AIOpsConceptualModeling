@@ -3,7 +3,8 @@
     xmlns:j.0="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:j.1="http://www.semanticweb.org/raven/ontologies/2020/10/baseOnt#Sampling "
+    xmlns:j.2="http://www.semanticweb.org/raven/ontologies/2020/10/API#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:j.2="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#"
+    xmlns:j.3="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 </rdf:RDF>

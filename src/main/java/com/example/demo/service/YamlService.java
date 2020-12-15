@@ -10,11 +10,15 @@ import com.example.demo.model.*;
  */
 public class YamlService {
     private String layer;
+    YamlDao myyaml;
     public YamlService(String layer) {
         this.layer = layer;
+        if(layer.equals("API")){myyaml=new YamlDao("API 11.17.yml");}
+        else if(layer.equals("SDK")){myyaml=new YamlDao("SDK 12.8.yml");}
+        else{myyaml=new YamlDao("view model 12.15.yml");}
     }
     OntService ontService = new OntService(this.layer);
-    YamlDao myyaml = new YamlDao("API 11.17.yml");
+
     AbstractModel primeModel = new AbstractModel();
 
     public AbstractModel YamlToProps() throws FileNotFoundException {

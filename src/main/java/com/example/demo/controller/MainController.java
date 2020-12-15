@@ -37,11 +37,6 @@ public class MainController {
         String layer = "SDK";
         owlInitialize(layer);
     }
-    @RequestMapping("/View")
-    public void View() throws FileNotFoundException {
-        String layer = "View";
-        owlInitialize(layer);
-    }
 
 
 }

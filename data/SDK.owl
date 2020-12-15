@@ -7,4 +7,130 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:j.3="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler">
+    <j.3:mySampler>Sampler interface allows users to create custom samplers which will return a sampling SamplingResult based on information that is typically available just before the Span was created.</j.3:mySampler>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampling">
+    <j.3:mySampling>Sampling is a mechanism to control the noise and overhead introduced by OpenTelemetry by reducing the number of samples of traces collected and sent to the backend.</j.3:mySampling>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TermsDefinedInResourceSDKSpecification"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TracerProvider"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanExporter">
+    <j.3:mySpanExporter>Span Exporter defines the interface that protocol-specific exporters must implement so that they can be plugged into OpenTelemetry SDK and support sending of telemetry data.</j.3:mySpanExporter>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInSamplers"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AdditionalSpanInterfaces"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#DataflowDiagram">
+    <j.3:myDataflowDiagram>From an external perspective, the Metrics SDK implements the Meter and MeterProvider interfaces described in the Metrics API. From an internal perspective, the Metrics SDK encapsulates an export pipeline for metric data consisting of four major components.</j.3:myDataflowDiagram>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInProcessor"/>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#GetDescription">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ForceFlush()">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Resources">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TermsDefinedInResourceSDKSpecification"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TracerCreation">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TracerProvider"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ExportRecordSet">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ExportKind">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Read/WriteSpan">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AdditionalSpanInterfaces"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SimpleProcessor">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ShutDown">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TracerProvider"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ReturnValue">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Aggregation">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AggregatorSnapshot">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AggregationKind">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Accumulation">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ExportKindSelector">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#OnStart">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AlwaysOff">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInSamplers"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TraceIdRatioBased">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInSamplers"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AlwaysOn">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInSamplers"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BatchingProcessor">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#InstrumentationLibrary">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TermsDefinedInResourceSDKSpecification"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ReadableSpan">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AdditionalSpanInterfaces"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AggregatorSelector">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ShouldSample">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ConfigurableParameters">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Aggregator">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#ExportRecord">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Shutdown()">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#OnEnd">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Type">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TracerProvider"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#TermsDefinedInResourceSDKSpecification"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampling"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#AdditionalSpanInterfaces"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInProcessor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanExporter"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#BuiltInSamplers"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SpanProcessor"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#SignificantDataTypesUsedInTheModelArchitecture"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#DataflowDiagram"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#RequiredArguments">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#Sampler"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#myDataflowDiagram"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#mySampler"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#mySampling"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#mySpanExporter"/>
 </rdf:RDF>

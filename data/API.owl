@@ -7,4 +7,367 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:j.3="http://www.semanticweb.org/raven/ontologies/2020/10/SDK#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext">
+    <j.2:myTraceState>Carries vendor-specific trace identification data, represented as a list of key-value pairs.</j.2:myTraceState>
+    <j.2:myTraceFlags>Contain details about the trace. Unlike TraceState values, TraceFlags are present in all traces.</j.2:myTraceFlags>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetsOfLabels">
+    <j.2:mySetsOfLabels>Label handling can be a significant cost in the production of metric data overall.</j.2:mySetsOfLabels>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ClearFunction">
+    <j.2:myClearFunction>Returns a new Context with no Baggage.</j.2:myClearFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#AddEvents">
+    <j.2:myAddEvents>A Span MUST have the ability to add events. Events have a time associated with the moment when they are added to the Span.</j.2:myAddEvents>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetStatus">
+    <j.2:mySetStatus>Sets the Status of the Span. If used, this will override the default Span status, which is Unset.</j.2:mySetStatus>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpdateName">
+    <j.2:myUpdateName>Updates the Span name. Upon this update, any sampling behavior based on Span name will depend on the implementation.</j.2:myUpdateName>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer2">
+    <j.2:myTracer>Tracer is the class responsible for creating Spans.</j.2:myTracer>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency">
+    <j.2:myConcurrency>For languages which support concurrent execution the Metrics APIs provide specific guarantees and safeties. Not all of API functions are safe to be called concurrently.</j.2:myConcurrency>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Aggregation">
+    <j.2:myAggregation>Aggregation refers to the process of combining multiple measurements into exact or estimated statistics about the measurements that took place during an interval of time, during program execution.</j.2:myAggregation>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetBaggageFunction">
+    <j.2:myGetBaggageFunction>To access the value for a name/value pair by a prior event, the Baggage API MUST provide a function that takes a context and a name as input, and returns a value. Returns the value associated with the given name, or null if the given name is not present.</j.2:myGetBaggageFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#End">
+    <j.2:myEnd>Signals that the operation described by this span has now (or at the time optionally specified) ended.</j.2:myEnd>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#RemoveBaggageFunction">
+    <j.2:myRemoveBaggageFunction>To delete a name/value pair, the Baggage API MUST provide a function which takes a context and a name as input.</j.2:myRemoveBaggageFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetAllFunction">
+    <j.2:myGetAllFunction>Returns the name/value pairs in the Baggage. The order of name/value pairs MUST NOT be significant. Based on the language specification, the returned value can be either an immutable collection or an immutable iterator to the collection of name/value pairs in the Baggage. OPTIONAL parameters:Context the context containing the Baggage from which to get the baggages.</j.2:myGetAllFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetBaggageFunction">
+    <j.2:mySetBaggageFunction>To record the value for a name/value pair, the Baggage API MUST provide a function which takes a context, a name, and a value as input.</j.2:mySetBaggageFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Metrics">
+    <j.2:myMetrics>The OpenTelemetry Metrics API supports capturing measurements about the execution of a computer program at run time. The Metrics API is designed explicitly for processing raw measurements, generally with the intent to produce continuous summaries of those measurements, efficiently and simultaneously.</j.2:myMetrics>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsRecording">
+    <j.2:myIsRecording>Returns true if this Span is recording information like events with the AddEvent operation, attributes using SetAttributes, status with SetStatus, etc.</j.2:myIsRecording>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#MeterInterface">
+    <j.2:myMeterInterface>The API defines a Meter interface. This interface consists of a set of instrument constructors, and a facility for capturing batches of measurements in a semantically atomic way.</j.2:myMeterInterface>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ConflictResolution">
+    <j.2:myConflictResolution>If a new name/value pair is added and its name is the same as an existing name, than the new pair MUST take precedence.</j.2:myConflictResolution>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Labels">
+    <j.2:myLabels>Label is the term used to refer to a key-value attribute associated with a metric event, similar to a Span attribute in the tracing API. Each label categorizes the metric event, allowing events to be filtered and grouped for analysis.</j.2:myLabels>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Measurements">
+    <j.2:myMeasurements>Metircs API is designed to capture and handle raw measurements.</j.2:myMeasurements>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageAPI">
+    <j.2:myBaggage>The functions described here are one way to approach interacting with the Baggage purely via the Context. Depending on language idioms, a language API MAY implement these functions by providing a struct or immutable object that represents the entire Baggage contents. This construct could then be added or removed from the Context with a single operation.</j.2:myBaggage>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#RecordException">
+    <j.2:myRecordException>To facilitate recording an exception languages SHOULD provide a RecordException method if the language uses exceptions.</j.2:myRecordException>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span2">
+    <j.2:mySpan>Span is the API to trace an operation.</j.2:mySpan>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageFunction">
+    <j.2:myBaggageFunction>Baggage is used to annotate telemetry, adding context and information to metrics, traces, and logs. It is an abstract data type represented by a set of name/value pairs describing user-defined properties. Each name in Baggage MUST be associated with exactly one value.</j.2:myBaggageFunction>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span">
+    <j.2:mySpan>A Span represents a single operation within a trace. Spans can be nested to form a trace tree. Each trace contains a root span, which typically describes the entire operation and, optionally, one or more sub-spans for its sub-operations.</j.2:mySpan>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer">
+    <j.2:myTracer>The tracer is responsible for creating Spans.</j.2:myTracer>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#InstrumentProperties">
+    <j.2:myInstrumentProperties>Because the API is separated from the SDK, the implementation ultimately determines how metric events are handled. Therefore, the choice of instrument should be guided by semantics and the intended interpretation. The semantics of the individual instruments is defined by several properties, detailed here, to assist with instrument selection.</j.2:myInstrumentProperties>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggagePropagation">
+    <j.2:myBaggagePropagation>Baggage MAY be propagated across process boundaries or across any arbitrary boundaries for various reasons. The API layer or an extension package MUST include a TextMapPropagator implementing the W3C Baggage Specification.</j.2:myBaggagePropagation>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanLifetime">
+    <j.2:mySpanLifetime>Span lifetime represents the process of recording the start and the end timestamps to the Span object.</j.2:mySpanLifetime>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetricInstruments">
+    <j.2:myMetricInstruments>A metric instrument is a device for capturing raw measurements in the API.</j.2:myMetricInstruments>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetAttributes">
+    <j.2:mySetAttributes>A Span MUST have the ability to set Attributes associated with it.</j.2:mySetAttributes>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ContextInteraction">
+    <j.2:myContextInteraction>The API MUST provide the following functionality to interact with a Context instance:Extract the Span from a Context instance; Insert the Span to a Context instance.</j.2:myContextInteraction>
+    <j.2:myContextInteractionImplicitly>the API SHOULD also provide the following functionality:Get the currently active span from the implicit context; Set the currently active span to the implicit context.</j.2:myContextInteractionImplicitly>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider">
+    <j.2:myTraceProvider>TraceProvider is the entry point of the API. It provides access to Tracers.</j.2:myTraceProvider>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#CreateANewSpan">
+    <j.2:myCreateANewSpan>A function that Tracer must provide.</j.2:myCreateANewSpan>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetContext">
+    <j.2:myGetContext>An API that returns the SpanContext for the given Span.</j.2:myGetContext>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TimeOfMetrics">
+    <j.2:myTimeOfMetrics>Time is a fundamental property of metric events, but not an explicit one.</j.2:myTimeOfMetrics>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#MeterProvider">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency"/>
+    <j.2:myMeterProvider>Used to maintain Meter instances, usually designed as singleton.</j.2:myMeterProvider>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isAMethodOf">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#RemoveBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#ClearFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageFunction"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageAPI"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetAllFunction"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mustProvide">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#AddEvents"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpdateName"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetAttributes"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#End"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetStatus"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#CreateANewSpan"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#RecordException"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsRecording"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isComposedOf">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Name">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Counter">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#LinksToOtherSpans">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ValueObserver">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Aggregation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#INTERNAL">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ValueRecorder">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Aggregation"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instrument">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#PRODUCER">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#EndTimestamp">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Duration">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Version">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SumObserver">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsRemote">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#LabelSet">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#CONSUMER">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Spanname">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanId">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetMeter">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MeterProvider"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Meter">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Type">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TimeOfMetrics"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span2"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpdateName"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MeterInterface"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer2"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#ContextInteraction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetAttributes"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggagePropagation"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetsOfLabels"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#ClearFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MeterProvider"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanLifetime"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Measurements"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#AddEvents"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetAllFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Metrics"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetStatus"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#CreateANewSpan"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#BaggageAPI"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetricInstruments"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#ConflictResolution"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#RecordException"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetContext"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Labels"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#End"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#InstrumentProperties"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsRecording"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#RemoveBaggageFunction"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Aggregation"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Resources">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Attributes">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Spankind">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Value">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TimestampEvents">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TimeStamp">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#BoundInstument">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Concurrency"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#SERVER">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Timestamp">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Status">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Synchronicity">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetricInstruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#InstrumentDefinition">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetircEventFormat"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceId">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#StartTimestamp">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Adding">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Measurements"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#ParentSpan">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#CLIENT">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanKind"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsValid">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SpanContext"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpDownSumObserver">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Grouping">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Measurements"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#AddingvsGrouping">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetricInstruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Monotonicity">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#MetricInstruments"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#StatusCode">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetStatus"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpDownCounter">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Instruments"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myMetricInstruments"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myGetContext"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySetAttributes"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myTraceProvider"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myTracer"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myAggregation"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myIsRecording"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySpan"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myRecordException"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myConflictResolution"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myUpdateName"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myMeterInterface"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myClearFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myInstrumentProperties"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myBaggagePropagation"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myContextInteraction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myMeterProvider"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myCreateANewSpan"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myEnd"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myAddEvents"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myContextInteractionImplicitly"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myGetAllFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySetsOfLabels"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myLabels"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myTimeOfMetrics"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myTraceState"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySetBaggageFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myMetrics"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySpanLifetime"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myGetBaggageFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myTraceFlags"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myConcurrency"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mySetStatus"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myBaggage"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myRemoveBaggageFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myBaggageFunction"/>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#myMeasurements"/>
 </rdf:RDF>

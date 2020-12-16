@@ -38,32 +38,32 @@ process:
   tags: tag[]
 Relation1:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf1
   Domain: span
   Range: trace
 Relation2:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf2
   Domain: reference
   Range: span
 Relation3:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf3
   Domain: tag
   Range: span
 Relation4:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf4
   Domain: process
   Range: trace
 Relation5:
   Type: relation
-  Name: isDataOf
+  Name: isDataOf5
   Domain: jaeger
   Range: dataOfJaeger
 Relation6:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf6
   Domain: dataOfJaeger
   Range: trace
 
@@ -90,17 +90,17 @@ metric:
   service: String
 Relation7:
   Type: relation
-  Name: isDataOf
+  Name: isDataOf7
   Domain: data
   Range: Prometheus
 Relation8:
   Type: relation
-  Name: isResultOf
+  Name: isResultOf8
   Domain: result
   Range: data
 Relation9:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf9
   Domain: metric
   Range: result
 
@@ -118,12 +118,12 @@ log:
   source: String
 Relation10:
   Type: relation
-  Name: isDataOf
+  Name: isDataOf10
   Domain: dataOfKibana
   Range: Kibana
 Relation11:
   Type: relation
-  Name: isAComponentOf
+  Name: isAComponentOf11
   Domain: log
   Range: dataOfKibana
 

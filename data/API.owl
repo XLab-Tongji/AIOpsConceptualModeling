@@ -136,26 +136,36 @@
     <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetBaggageFunction"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetAllFunction"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mustProvide16">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mustProvide">
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#AddEvents"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#UpdateName"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetContext"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetAttributes"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#End"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#SetStatus"/>
-    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#CreateANewSpan"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#RecordException"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#IsRecording"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isComposedOf">
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isComposedOf13">
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TraceProvider"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isComposedOf14">
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
     <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#isComposedOf15">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#TracingAPI"/>
     <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Span"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#mustProvide17">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#Tracer"/>
+    <rdfs:range rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#CreateANewSpan"/>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/raven/ontologies/2020/10/API#Name">
     <rdfs:domain rdf:resource="http://www.semanticweb.org/raven/ontologies/2020/10/API#GetATracer"/>

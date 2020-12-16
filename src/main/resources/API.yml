@@ -402,7 +402,7 @@ Relation13:
 
   Type: relation
 
-  Name: isComposedOf
+  Name: isComposedOf13
 
   Domain: TracingAPI
 
@@ -412,7 +412,7 @@ Relation14:
 
   Type: relation
 
-  Name: isComposedOf
+  Name: isComposedOf14
 
   Domain: TracingAPI
 
@@ -422,7 +422,7 @@ Relation15:
 
   Type: relation
 
-  Name: isComposedOf
+  Name: isComposedOf15
 
   Domain: TracingAPI
 
@@ -432,7 +432,7 @@ Relation16:
 
   Type: relation
 
-  Name: mustProvide
+  Name: mustProvide16
 
   Domain: TraceProvider
 
@@ -442,7 +442,7 @@ Relation17:
 
   Type: relation
 
-  Name: mustProvide
+  Name: mustProvide17
 
   Domain: Tracer
 

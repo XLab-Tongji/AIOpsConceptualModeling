@@ -7,6 +7,7 @@ import java.util.*;
 import com.example.demo.model.*;
 /**
  * @author xjt
+ * This class provides a method for yaml transformation
  */
 public class YamlDao {
 
@@ -44,11 +45,15 @@ public class YamlDao {
                     Object value = entry2.getValue();
                     if(prop.toString().equals("Type")&&value.toString().equals("class")){
                         type=1;
-                        //是类
+                        /**
+                         * class confirmed
+                         */
                     }
                     if(prop.toString().equals("Type")&&value.toString().equals("relation")){
                         type=2;
-                        //是关系
+                        /**
+                         * relation confirmed
+                         */
                     }
                 }
                 if(type==1){

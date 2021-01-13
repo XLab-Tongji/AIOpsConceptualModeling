@@ -11,12 +11,16 @@ import java.io.FileOutputStream;
 
 /**
  * @author Raven
+ * This class provides a method for ontology construction
  */
 
 public class OntDao {
     private final String NS;
     public String result ;
     public OntDao(String layer) {
+        /**
+         * Pre-construct ontology file
+         */
         String source = "http://www.semanticweb.org/raven/ontologies/2020/10/";
         source = source + layer;
         this.NS = source + "#";
@@ -25,6 +29,9 @@ public class OntDao {
 
 
     public String createClass(String newClass) throws FileNotFoundException {
+        /**
+         * Create class
+         */
         String message = "Class created";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
@@ -36,6 +43,9 @@ public class OntDao {
     }
 
     public String optProp(String name, String domain, String range) throws FileNotFoundException {
+        /**
+         * Create domain and range for classes or relations
+         */
         String message = "Property optimized";
         System.out.println(name + domain + range);
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
@@ -64,6 +74,9 @@ public class OntDao {
         return message;
     }
     public String addProp(String child, String parent, String value) throws FileNotFoundException {
+        /**
+         * Add property for classes or relations
+         */
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
 
@@ -92,6 +105,9 @@ public class OntDao {
     }
 
     public String removeRes(String name) {
+        /**
+         * Remove resources
+         */
         String message = "Resource removed";
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
@@ -106,6 +122,9 @@ public class OntDao {
         return message;
     }
     public void addDataProp(String father, String name, String type, String desc) throws FileNotFoundException {
+        /**
+         * Create properties for data
+         */
         OntModel baseOnt = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
         baseOnt.read(result);
 

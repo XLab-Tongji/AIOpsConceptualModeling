@@ -13,6 +13,7 @@ import java.util.Map;
  * @author Raven
  */
 public class PromService {
+    //从Prometheus中获取metrics数据
     public void metricsGet(String url, String user, String pwd, String query){
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor(user, pwd));

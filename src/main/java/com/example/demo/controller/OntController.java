@@ -19,17 +19,20 @@ public class OntController {
         return "hello index";
     }
 
+    //创建类的接口
     @PostMapping("/addClass")
     public String addClass(@RequestParam("name") String name) throws FileNotFoundException {
 
         return ontDao.createClass(name);
     }
 
+    //删除资源的接口
     @PostMapping("/deleteRes")
     public String deleteRes(@RequestParam("name") String name){
         return ontDao.removeRes(name);
     }
 
+    //添加属性的接口
     @PostMapping("/addProperty")
     public String addProp(@RequestParam("name") String name,
                           @RequestParam("parentName") String parentName,
@@ -37,6 +40,7 @@ public class OntController {
         return ontDao.addProp(name, parentName, value);
     }
 
+    //添加数据属性的接口
     @PostMapping("/optimizeProperty")
     public String optProp(@RequestParam("name") String name,
                           @RequestParam(value = "domain", required = false) String domain,

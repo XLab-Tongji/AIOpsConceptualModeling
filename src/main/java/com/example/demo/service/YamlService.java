@@ -17,6 +17,7 @@ public class YamlService {
     }
     AbstractModel primeModel = new AbstractModel();
 
+    //读取yaml文件，将yaml模型转化为java模型
     public AbstractModel YamlToProps() throws FileNotFoundException {
 
         String path = layer+".yml";

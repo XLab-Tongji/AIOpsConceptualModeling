@@ -21,6 +21,7 @@ public class YamlController {
 
     @RequestMapping("/init/{layer}")
 
+    //接口调用yamlservice
     public AbstractModel yamlToProps(@PathVariable String layer) throws FileNotFoundException {
         YamlService yamlService = new YamlService(layer);
         System.out.println(layer);
